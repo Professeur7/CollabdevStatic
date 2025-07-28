@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard | CollabDev</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../assets/css/index.css" />
+    <link rel="stylesheet" href="../assets/css/components.css" />
+    <link rel="stylesheet" href="../assets/css/dashboard.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="glass-header">
+      <div class="container">
+        <nav class="navbar">
+          <a href="index.html" class="logo">
+            <i class="fas fa-code-branch"></i>
+            <span>CollabDev</span>
+          </a>
+
+          <!-- Barre de recherche avancée -->
+          <div class="search-container">
+            <div class="search-bar">
+              <input
+                type="text"
+                placeholder="Rechercher projets, membres, fonctionnalités..."
+                id="globalSearch"
+              />
+              <button class="search-btn">
+                <i class="fas fa-search"></i>
+              </button>
+              <div class="search-results glass-panel"></div>
+            </div>
+          </div>
+
+          <div class="header-actions">
+            <button class="notification-btn">
+              <i class="fas fa-bell"></i>
+              <span class="notification-badge">3</span>
+            </button>
+            <button class="theme-toggle" id="themeToggle">
+              <i class="fas fa-moon"></i>
+            </button>
+            <div class="user-avatar" id="userMenuBtn">
+              <img src="assets/images/avatars/user1.jpg" alt="Profil" />
+              <div class="user-status online"></div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="dashboard-layout">
+      <!-- Sidebar -->
+      <aside class="glass-sidebar">
+        <div class="user-profile">
+          <div class="avatar-container">
+            <img
+              src="assets/images/avatars/user1.jpg"
+              alt="Profil"
+              class="profile-avatar"
+            />
+            <div class="level-badge">24</div>
+          </div>
+          <h3>Alex Dupont</h3>
+          <p>Développeur Fullstack</p>
+          <div class="xp-bar">
+            <div class="xp-progress" style="width: 65%"></div>
+            <span>2,450/3,800 XP</span>
+          </div>
+        </div>
+
+        <nav class="sidebar-nav">
+          <a href="dashboard.html" class="active">
+            <i class="fas fa-home"></i>
+            <span>Tableau de bord</span>
+          </a>
+          <a href="projects.html">
+            <i class="fas fa-project-diagram"></i>
+            <span>Mes projets</span>
+          </a>
+          <a href="contributions.html">
+            <i class="fas fa-code-merge"></i>
+            <span>Contributions</span>
+            <span class="nav-badge">5</span>
+          </a>
+          <a href="messages.html">
+            <i class="fas fa-envelope"></i>
+            <span>Messages</span>
+            <span class="nav-badge">3</span>
+          </a>
+          <a href="rewards.html">
+            <i class="fas fa-trophy"></i>
+            <span>Récompenses</span>
+          </a>
+          <a href="analytics.html">
+            <i class="fas fa-chart-network"></i>
+            <span>Analytics</span>
+          </a>
+        </nav>
+
+        <div class="sidebar-footer">
+          <button class="btn-create">
+            <i class="fas fa-plus"></i>
+            Nouveau projet
+          </button>
+        </div>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="dashboard-content">
+        <section class="welcome-banner glass-panel">
+          <div class="welcome-content">
+            <h1>Bon retour, Alex!</h1>
+            <p>
+              Vous avez 3 nouvelles activités et 2 contributions en attente de
+              revue
+            </p>
+            <button class="btn-primary">
+              Voir les notifications
+              <i class="fas fa-arrow-right"></i>
+            </button>
+          </div>
+          <div class="welcome-illustration">
+            <img
+              src="assets/images/dashboard-illustration.svg"
+              alt="Illustration"
+            />
+          </div>
+        </section>
+
+        <!-- Stats Cards -->
+        <div class="stats-grid">
+          <div class="stat-card glass-panel">
+            <div class="stat-icon">
+              <i class="fas fa-project-diagram"></i>
+            </div>
+            <div class="stat-info">
+              <h3>8</h3>
+              <p>Projets actifs</p>
+            </div>
+            <div class="stat-badge success">+2 cette semaine</div>
+          </div>
+
+          <div class="stat-card glass-panel">
+            <div class="stat-icon">
+              <i class="fas fa-code-commit"></i>
+            </div>
+            <div class="stat-info">
+              <h3>24</h3>
+              <p>Contributions</p>
+            </div>
+            <div class="stat-badge warning">En attente: 3</div>
+          </div>
+
+          <div class="stat-card glass-panel">
+            <div class="stat-icon">
+              <i class="fas fa-coins"></i>
+            </div>
+            <div class="stat-info">
+              <h3>1,850</h3>
+              <p>Points Collab</p>
+            </div>
+            <div class="stat-badge primary">Niveau 4</div>
+          </div>
+
+          <div class="stat-card glass-panel">
+            <div class="stat-icon">
+              <i class="fas fa-trophy"></i>
+            </div>
+            <div class="stat-info">
+              <h3>5</h3>
+              <p>Badges</p>
+            </div>
+            <div class="stat-badge info">Nouveau: Expert</div>
+          </div>
+        </div>
+
+        <!-- Projets récents -->
+        <section class="section-card glass-panel">
+          <div class="section-header">
+            <h2>
+              <i class="fas fa-project-diagram"></i>
+              Projets récents
+            </h2>
+            <a href="projects.html" class="btn-link">
+              Voir tout
+              <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+
+          <div class="projects-grid">
+            <!-- Projet 1 -->
+            <div class="project-card">
+              <div class="project-header">
+                <div class="project-badge" style="background-color: #6366f1">
+                  <i class="fas fa-mobile-alt"></i>
+                </div>
+                <h3>Appli Recettes</h3>
+                <div class="project-actions">
+                  <button class="btn-icon">
+                    <i class="fas fa-ellipsis-v"></i>
+                  </button>
+                </div>
+              </div>
+              <p class="project-description">
+                Application mobile de partage de recettes avec IA
+              </p>
+              <div class="project-progress">
+                <div class="progress-bar">
+                  <div class="progress-fill" style="width: 45%"></div>
+                </div>
+                <span>45% complété</span>
+              </div>
+              <div class="project-footer">
+                <div class="project-members">
+                  <div class="member-avatar">
+                    <img src="assets/images/avatars/user2.jpg" alt="Membre" />
+                  </div>
+                  <div class="member-avatar">
+                    <img src="assets/images/avatars/user3.jpg" alt="Membre" />
+                  </div>
+                  <div class="member-avatar">
+                    <img src="assets/images/avatars/user4.jpg" alt="Membre" />
+                  </div>
+                  <div class="member-count">+5</div>
+                </div>
+                <div class="project-rewards">
+                  <span class="reward-chip">
+                    <i class="fas fa-bolt"></i>
+                    250 XP
+                  </span>
+                  <span class="reward-chip">
+                    <i class="fas fa-coins"></i>
+                    75 Points
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Projet 2 -->
+            <div class="project-card">
+              <div class="project-header">
+                <div class="project-badge" style="background-color: #10b981">
+                  <i class="fas fa-tasks"></i>
+                </div>
+                <h3>TaskFlow</h3>
+                <div class="project-actions">
+                  <button class="btn-icon">
+                    <i class="fas fa-ellipsis-v"></i>
+                  </button>
+                </div>
+              </div>
+              <p class="project-description">
+                Plateforme de gestion de tâches en temps réel
+              </p>
+              <div class="project-progress">
+                <div class="progress-bar">
+                  <div class="progress-fill" style="width: 78%"></div>
+                </div>
+                <span>78% complété</span>
+              </div>
+              <div class="project-footer">
+                <div class="project-members">
+                  <div class="member-avatar">
+                    <img src="assets/images/avatars/user5.jpg" alt="Membre" />
+                  </div>
+                  <div class="member-avatar">
+                    <img src="assets/images/avatars/user6.jpg" alt="Membre" />
+                  </div>
+                  <div class="member-count">+3</div>
+                </div>
+                <div class="project-rewards">
+                  <span class="reward-chip">
+                    <i class="fas fa-bolt"></i>
+                    180 XP
+                  </span>
+                  <span class="reward-chip">
+                    <i class="fas fa-coins"></i>
+                    60 Points
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Activité récente -->
+        <section class="section-card glass-panel">
+          <div class="section-header">
+            <h2>
+              <i class="fas fa-bell"></i>
+              Activité récente
+            </h2>
+            <a href="activity.html" class="btn-link">
+              Voir tout
+              <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+
+          <div class="activity-feed">
+            <!-- Activité 1 -->
+            <div class="activity-item">
+              <div class="activity-avatar">
+                <img src="assets/images/avatars/user2.jpg" alt="Utilisateur" />
+              </div>
+              <div class="activity-content">
+                <div class="activity-message">
+                  <strong>Marie L.</strong> a commenté votre contribution sur
+                  <strong>TaskFlow</strong>
+                </div>
+                <div class="activity-meta">
+                  <span class="activity-time">Il y a 2 heures</span>
+                  <span class="activity-badge">
+                    <i class="fas fa-code-merge"></i>
+                    Développement
+                  </span>
+                </div>
+              </div>
+              <button class="btn-icon">
+                <i class="fas fa-ellipsis-v"></i>
+              </button>
+            </div>
+
+            <!-- Activité 2 -->
+            <div class="activity-item highlight">
+              <div class="activity-avatar">
+                <img src="assets/images/avatars/user3.jpg" alt="Utilisateur" />
+                <div class="activity-badge-icon">
+                  <i class="fas fa-trophy"></i>
+                </div>
+              </div>
+              <div class="activity-content">
+                <div class="activity-message">
+                  <strong>Pierre D.</strong> a validé votre PR et vous avez
+                  gagné le badge <strong>Contributeur Expert</strong>
+                </div>
+                <div class="activity-meta">
+                  <span class="activity-time">Hier à 14:32</span>
+                  <span class="activity-badge reward">
+                    <i class="fas fa-medal"></i>
+                    +150 XP
+                  </span>
+                </div>
+              </div>
+              <button class="btn-icon">
+                <i class="fas fa-ellipsis-v"></i>
+              </button>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/theme.js"></script>
+    <script src="assets/js/dashboard.js"></script>
+  </body>
+</html>

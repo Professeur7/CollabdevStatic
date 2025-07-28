@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tableau de bord | CollabDev</title>
+    <link rel="stylesheet" href="../assets/css/index.css" />
+    <link rel="stylesheet" href="../assets/css/dashboard.css" />
+  </head>
+  <body>
+    <!-- Header commun -->
+    <header>
+      <div class="container">
+        <nav class="navbar">
+          <a href="index.html" class="logo">
+            <i class="fas fa-code-branch"></i>
+            CollabDev
+          </a>
+          <div class="nav-links">
+            <a href="index.html">Découvrir</a>
+            <a href="dashboard.html" class="active">Tableau de bord</a>
+            <a href="#">Notifications</a>
+          </div>
+          <div class="user-menu">
+            <div class="user-avatar" id="userMenuBtn">
+              <img src="assets/images/avatar-placeholder.png" alt="Avatar" />
+            </div>
+            <div class="user-dropdown" id="userDropdown">
+              <a href="profile.html"><i class="fas fa-user"></i> Mon profil</a>
+              <a href="settings.html"><i class="fas fa-cog"></i> Paramètres</a>
+              <a href="#" id="logoutBtn"
+                ><i class="fas fa-sign-out-alt"></i> Déconnexion</a
+              >
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Contenu principal -->
+    <div class="dashboard-container">
+      <aside class="dashboard-sidebar">
+        <ul class="sidebar-menu">
+          <li>
+            <a href="dashboard.html" class="active"
+              ><i class="fas fa-home"></i> Vue d'ensemble</a
+            >
+          </li>
+          <li>
+            <a href="my-projects.html"
+              ><i class="fas fa-project-diagram"></i> Mes projets</a
+            >
+          </li>
+          <li>
+            <a href="contributions.html"
+              ><i class="fas fa-code"></i> Mes contributions</a
+            >
+          </li>
+          <li>
+            <a href="messages.html"><i class="fas fa-envelope"></i> Messages</a>
+          </li>
+          <li>
+            <a href="rewards.html"
+              ><i class="fas fa-coins"></i> Mes récompenses</a
+            >
+          </li>
+        </ul>
+      </aside>
+
+      <main class="dashboard-content">
+        <section class="dashboard-section">
+          <h2>Vue d'ensemble</h2>
+
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-value">5</div>
+              <div class="stat-label">Projets actifs</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-value">12</div>
+              <div class="stat-label">Contributions</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-value">350</div>
+              <div class="stat-label">Points Collab</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-value">3</div>
+              <div class="stat-label">Badges</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="dashboard-section">
+          <div class="section-header">
+            <h3>Mes projets récents</h3>
+            <a href="my-projects.html" class="see-all">Voir tout</a>
+          </div>
+
+          <div class="projects-list" id="recentProjects">
+            <!-- Chargé dynamiquement -->
+          </div>
+        </section>
+
+        <section class="dashboard-section">
+          <div class="section-header">
+            <h3>Contributions en attente</h3>
+            <a href="contributions.html" class="see-all">Voir tout</a>
+          </div>
+
+          <div class="contributions-list" id="pendingContributions">
+            <!-- Chargé dynamiquement -->
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="assets/js/auth.js"></script>
+    <script src="assets/js/dashboard.js"></script>
+  </body>
+</html>

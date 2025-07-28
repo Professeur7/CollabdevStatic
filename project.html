@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Détail du Projet | CollabDev</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/css/index.css" />
+    <link rel="stylesheet" href="../assets/css/project.css" />
+  </head>
+  <body>
+    <!-- Header (same as index.html) -->
+    <header>
+      <div class="container">
+        <nav class="navbar">
+          <a href="index.html" class="logo">
+            <i class="fas fa-code-branch"></i>
+            CollabDev
+          </a>
+          <div class="nav-links">
+            <a href="index.html">Découvrir</a>
+            <a href="index.html">Projets</a>
+            <a href="#">Comment ça marche</a>
+            <a href="#">À propos</a>
+          </div>
+          <div class="auth-buttons">
+            <button class="btn btn-outline" id="loginBtn">Connexion</button>
+            <button class="btn btn-primary" id="registerBtn">
+              Inscription
+            </button>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Project Page Content -->
+    <div class="container" style="padding: 30px 0">
+      <!-- Project Header -->
+      <div class="project-header">
+        <div class="project-title">
+          <span>Plateforme de gestion de tâches</span>
+          <span class="project-tag">Niveau : Intermédiaire</span>
+        </div>
+        <div class="project-meta">
+          <div class="project-meta-item">
+            <i class="fas fa-star"></i>
+            <span>45 votes</span>
+          </div>
+          <div class="project-meta-item">
+            <i class="fas fa-users"></i>
+            <span>8 contributeurs</span>
+          </div>
+          <div class="project-meta-item">
+            <i class="fas fa-calendar"></i>
+            <span>Débuté le 15/06/2023</span>
+          </div>
+        </div>
+        <div class="project-tags">
+          <span class="project-tag">JavaScript</span>
+          <span class="project-tag">React</span>
+          <span class="project-tag">Node.js</span>
+          <span class="project-tag">Collaboration</span>
+        </div>
+        <p>
+          Une application web pour gérer les tâches d'équipe avec des tableaux
+          Kanban, des rapports d'avancement et une intégration avec les outils
+          de développement.
+        </p>
+        <div class="project-actions">
+          <button class="btn btn-primary" id="contributeBtn">
+            <i class="fas fa-handshake"></i> Demander à contribuer
+          </button>
+          <button class="btn btn-outline" id="voteBtn">
+            <i class="fas fa-star"></i> Voter pour ce projet
+          </button>
+        </div>
+      </div>
+
+      <!-- Project Tabs -->
+      <div class="project-tabs">
+        <div class="project-tab active" data-tab="description">Description</div>
+        <div class="project-tab" data-tab="features">Fonctionnalités</div>
+        <div class="project-tab" data-tab="contributions">Contributions</div>
+        <div class="project-tab" data-tab="discussion">Discussion</div>
+      </div>
+
+      <!-- Project Content -->
+      <div class="project-content">
+        <!-- Main Content -->
+        <div class="project-main">
+          <!-- Description Tab -->
+          <div class="project-description" id="descriptionTab">
+            <h3>À propos de ce projet</h3>
+            <p>
+              Ce projet vise à créer une plateforme complète de gestion de
+              tâches pour les équipes de développement. L'objectif est de
+              fournir un outil simple mais puissant qui intègre les
+              méthodologies Agile et Kanban tout en offrant des fonctionnalités
+              spécifiques pour les développeurs.
+            </p>
+
+            <h3 style="margin-top: 20px">Objectifs principaux</h3>
+            <ul style="margin-left: 20px; margin-bottom: 15px">
+              <li>Interface intuitive avec tableaux Kanban personnalisables</li>
+              <li>
+                Intégration avec GitHub/GitLab pour lier les tâches aux PRs
+              </li>
+              <li>Système de rapports d'avancement automatiques</li>
+              <li>Notifications en temps réel</li>
+              <li>API ouverte pour extensions</li>
+            </ul>
+
+            <h3 style="margin-top: 20px">Technologies utilisées</h3>
+            <p>
+              Le frontend sera développé en React avec TypeScript, tandis que le
+              backend utilisera Node.js avec Express. La base de données sera
+              MongoDB pour sa flexibilité.
+            </p>
+          </div>
+
+          <!-- Features Tab (hidden by default) -->
+          <div class="features-list" id="featuresTab" style="display: none">
+            <h3>Fonctionnalités planifiées</h3>
+
+            <div class="feature-item">
+              <div class="feature-header">
+                <div class="feature-title">
+                  Tableaux Kanban personnalisables
+                </div>
+                <div class="feature-status completed">Terminé</div>
+              </div>
+              <div class="feature-description">
+                Création et personnalisation de tableaux Kanban avec colonnes
+                modifiables et système de drag-and-drop.
+              </div>
+              <div class="feature-meta">
+                <span><i class="fas fa-user"></i> Assigné à Marie D.</span>
+                <span><i class="fas fa-calendar"></i> Livré le 10/07/2023</span>
+              </div>
+            </div>
+
+            <div class="feature-item">
+              <div class="feature-header">
+                <div class="feature-title">Intégration GitHub</div>
+                <div class="feature-status in-progress">En cours</div>
+              </div>
+              <div class="feature-description">
+                Connexion avec GitHub pour lier automatiquement les tâches aux
+                pull requests et issues.
+              </div>
+              <div class="feature-meta">
+                <span><i class="fas fa-user"></i> Assigné à Jean L.</span>
+                <span><i class="fas fa-calendar"></i> Échéance 25/08/2023</span>
+              </div>
+            </div>
+
+            <div class="feature-item">
+              <div class="feature-header">
+                <div class="feature-title">Rapports d'avancement</div>
+                <div class="feature-status planned">Planifié</div>
+              </div>
+              <div class="feature-description">
+                Génération automatique de rapports avec métriques d'avancement,
+                vélocité de l'équipe et prévisions.
+              </div>
+              <div class="feature-meta">
+                <span><i class="fas fa-user"></i> Non assigné</span>
+                <span><i class="fas fa-calendar"></i> Non planifié</span>
+              </div>
+            </div>
+
+            <div class="feature-item">
+              <div class="feature-header">
+                <div class="feature-title">Système de notifications</div>
+                <div class="feature-status planned">Planifié</div>
+              </div>
+              <div class="feature-description">
+                Notifications en temps réel pour les mises à jour de tâches,
+                mentions et échéances.
+              </div>
+              <div class="feature-meta">
+                <span><i class="fas fa-user"></i> Non assigné</span>
+                <span><i class="fas fa-calendar"></i> Non planifié</span>
+              </div>
+            </div>
+
+            <!-- Manager Controls (only visible for project managers) -->
+            <div
+              class="manager-controls"
+              id="managerControls"
+              style="display: none"
+            >
+              <h4>Contrôles du gestionnaire</h4>
+              <p>
+                En tant que gestionnaire de ce projet, vous pouvez modifier les
+                fonctionnalités et valider les contributions.
+              </p>
+              <div class="control-buttons">
+                <button class="btn btn-primary">
+                  <i class="fas fa-plus"></i> Ajouter une fonctionnalité
+                </button>
+                <button class="btn btn-outline">
+                  <i class="fas fa-edit"></i> Modifier la liste
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contributions Tab (hidden by default) -->
+          <div
+            class="features-list"
+            id="contributionsTab"
+            style="display: none"
+          >
+            <h3>Contributions récentes</h3>
+
+            <div class="feature-item">
+              <div class="feature-header">
+                <div class="feature-title">Implémentation du drag-and-drop</div>
+                <div class="feature-status completed">Validé</div>
+              </div>
+              <div class="feature-description">
+                Ajout de la fonctionnalité de drag-and-drop entre les colonnes
+                avec persistance de l'état.
+              </div>
+              <div class="feature-meta">
+                <span><i class="fas fa-user"></i> Par Marie D.</span>
+                <span
+                  ><i class="fas fa-calendar"></i> Soumis le 05/07/2023</span
+                >
+                <span><i class="fas fa-coins"></i> +15 coins</span>
+              </div>
+            </div>
+
+            <div class="feature-item">
+              <div class="feature-header">
+                <div class="feature-title">Authentification GitHub</div>
+                <div class="feature-status in-progress">En revue</div>
+              </div>
+              <div class="feature-description">
+                Première implémentation de l'OAuth pour la connexion avec
+                GitHub.
+              </div>
+              <div class="feature-meta">
+                <span><i class="fas fa-user"></i> Par Jean L.</span>
+                <span
+                  ><i class="fas fa-calendar"></i> Soumis le 18/07/2023</span
+                >
+                <span><i class="fas fa-coins"></i> En attente</span>
+              </div>
+
+              <!-- Manager review (only visible for managers) -->
+              <div
+                class="manager-controls"
+                style="margin-top: 15px; display: none"
+              >
+                <h4>Évaluer cette contribution</h4>
+                <div class="control-buttons">
+                  <button class="btn btn-primary">
+                    <i class="fas fa-check"></i> Valider (+15 coins)
+                  </button>
+                  <button class="btn btn-outline">
+                    <i class="fas fa-edit"></i> Demander des modifications
+                  </button>
+                  <button
+                    class="btn btn-outline"
+                    style="color: var(--danger); border-color: var(--danger)"
+                  >
+                    <i class="fas fa-times"></i> Rejeter
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Contribution Form -->
+            <div
+              class="project-card"
+              style="margin-top: 30px"
+              id="contributionForm"
+            >
+              <h3>Proposer une contribution</h3>
+              <form class="contribution-form">
+                <div class="form-group">
+                  <label for="contributionTitle"
+                    >Titre de votre contribution</label
+                  >
+                  <input
+                    type="text"
+                    id="contributionTitle"
+                    class="form-control"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="contributionDescription"
+                    >Description détaillée</label
+                  >
+                  <textarea
+                    id="contributionDescription"
+                    class="form-control"
+                    required
+                  ></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="contributionFeature"
+                    >Fonctionnalité concernée (optionnel)</label
+                  >
+                  <select id="contributionFeature" class="form-control">
+                    <option value="">-- Sélectionner --</option>
+                    <option value="1">Tableaux Kanban personnalisables</option>
+                    <option value="2">Intégration GitHub</option>
+                    <option value="3">Rapports d'avancement</option>
+                    <option value="4">Système de notifications</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="contributionFiles"
+                    >Fichiers joints (optionnel)</label
+                  >
+                  <input
+                    type="file"
+                    id="contributionFiles"
+                    class="form-control"
+                  />
+                </div>
+                <div class="form-actions">
+                  <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-paper-plane"></i> Soumettre la contribution
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <!-- Discussion Tab (hidden by default) -->
+          <div class="discussion" id="discussionTab" style="display: none">
+            <h3>Discussion du projet</h3>
+
+            <form class="contribution-form">
+              <div class="form-group">
+                <label for="commentText">Ajouter un commentaire</label>
+                <textarea
+                  id="commentText"
+                  class="form-control"
+                  placeholder="Posez une question ou partagez une idée..."
+                ></textarea>
+              </div>
+              <div class="form-actions">
+                <button type="submit" class="btn btn-primary">
+                  <i class="fas fa-comment"></i> Publier
+                </button>
+              </div>
+            </form>
+
+            <div class="comments-list">
+              <div class="comment">
+                <div class="comment-avatar">
+                  <i class="fas fa-user"></i>
+                </div>
+                <div class="comment-content">
+                  <div class="comment-header">
+                    <span class="comment-author">Marie D.</span>
+                    <span class="comment-date">15/07/2023 à 14:32</span>
+                  </div>
+                  <p>
+                    J'ai remarqué un petit bug dans le drag-and-drop quand on a
+                    beaucoup de cartes dans une colonne. Je travaille sur un
+                    correctif.
+                  </p>
+                </div>
+              </div>
+
+              <div class="comment">
+                <div class="comment-avatar">
+                  <i class="fas fa-user"></i>
+                </div>
+                <div class="comment-content">
+                  <div class="comment-header">
+                    <span class="comment-author">Jean L.</span>
+                    <span class="comment-date">14/07/2023 à 09:15</span>
+                  </div>
+                  <p>
+                    Pour l'intégration GitHub, est-ce qu'on veut supporter à la
+                    fois les repositories publics et privés ? Cela va influencer
+                    l'implémentation OAuth.
+                  </p>
+
+                  <div class="comment" style="margin-top: 15px">
+                    <div class="comment-avatar">
+                      <i class="fas fa-user-tie"></i>
+                    </div>
+                    <div class="comment-content">
+                      <div class="comment-header">
+                        <span class="comment-author"
+                          >Pierre M. (Gestionnaire)</span
+                        >
+                        <span class="comment-date">14/07/2023 à 11:47</span>
+                      </div>
+                      <p>
+                        Oui, il faut prévoir les deux cas. Les repositories
+                        privés seront accessibles seulement si l'utilisateur a
+                        les droits nécessaires sur GitHub.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="project-sidebar">
+          <!-- Project Manager Card -->
+          <div class="project-card">
+            <h3>Gestionnaire du projet</h3>
+            <div class="contributor">
+              <div class="contributor-avatar">
+                <i class="fas fa-user-tie"></i>
+              </div>
+              <div>
+                <div class="contributor-name">Pierre M.</div>
+                <div class="contributor-role">Développeur Full-Stack</div>
+              </div>
+            </div>
+            <p style="margin-top: 15px; font-size: 0.9rem">
+              Ce projet a été proposé par un membre non-technique et est
+              maintenant géré par Pierre.
+            </p>
+          </div>
+
+          <!-- Contributors Card -->
+          <div class="project-card">
+            <h3>Contributeurs (8)</h3>
+            <div class="contributors-list">
+              <div class="contributor">
+                <div class="contributor-avatar">
+                  <i class="fas fa-user"></i>
+                </div>
+                <div>
+                  <div class="contributor-name">Marie D.</div>
+                  <div class="contributor-role">Frontend Developer</div>
+                </div>
+              </div>
+              <div class="contributor">
+                <div class="contributor-avatar">
+                  <i class="fas fa-user"></i>
+                </div>
+                <div>
+                  <div class="contributor-name">Jean L.</div>
+                  <div class="contributor-role">Backend Developer</div>
+                </div>
+              </div>
+              <div class="contributor">
+                <div class="contributor-avatar">
+                  <i class="fas fa-user"></i>
+                </div>
+                <div>
+                  <div class="contributor-name">Sophie T.</div>
+                  <div class="contributor-role">UI/UX Designer</div>
+                </div>
+              </div>
+              <div class="contributor">
+                <div class="contributor-avatar">
+                  <i class="fas fa-user"></i>
+                </div>
+                <div>
+                  <div class="contributor-name">Ahmed K.</div>
+                  <div class="contributor-role">Tester</div>
+                </div>
+              </div>
+            </div>
+            <button
+              class="btn btn-outline"
+              style="width: 100%; margin-top: 15px"
+            >
+              Voir tous les contributeurs
+            </button>
+          </div>
+
+          <!-- Project Stats Card -->
+          <div class="project-card">
+            <h3>Statistiques</h3>
+            <div style="display: flex; flex-direction: column; gap: 10px">
+              <div>
+                <div
+                  style="
+                    display: flex;
+                    justify-content: space-between;
+                    margin-bottom: 5px;
+                  "
+                >
+                  <span>Avancement global</span>
+                  <span>35%</span>
+                </div>
+                <div
+                  style="
+                    height: 8px;
+                    background-color: var(--gray-light);
+                    border-radius: 4px;
+                  "
+                >
+                  <div
+                    style="
+                      width: 35%;
+                      height: 100%;
+                      background-color: var(--primary);
+                      border-radius: 4px;
+                    "
+                  ></div>
+                </div>
+              </div>
+              <div>
+                <div
+                  style="
+                    display: flex;
+                    justify-content: space-between;
+                    margin-bottom: 5px;
+                  "
+                >
+                  <span>Fonctionnalités terminées</span>
+                  <span>1/4</span>
+                </div>
+                <div
+                  style="
+                    height: 8px;
+                    background-color: var(--gray-light);
+                    border-radius: 4px;
+                  "
+                >
+                  <div
+                    style="
+                      width: 25%;
+                      height: 100%;
+                      background-color: var(--success);
+                      border-radius: 4px;
+                    "
+                  ></div>
+                </div>
+              </div>
+              <div>
+                <div
+                  style="
+                    display: flex;
+                    justify-content: space-between;
+                    margin-bottom: 5px;
+                  "
+                >
+                  <span>Contributions validées</span>
+                  <span>5</span>
+                </div>
+              </div>
+              <div>
+                <div
+                  style="
+                    display: flex;
+                    justify-content: space-between;
+                    margin-bottom: 5px;
+                  "
+                >
+                  <span>Pièces distribuées</span>
+                  <span>75</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project Resources Card -->
+          <div class="project-card">
+            <h3>Ressources</h3>
+            <div style="display: flex; flex-direction: column; gap: 10px">
+              <a
+                href="#"
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: 8px;
+                  color: var(--primary);
+                  text-decoration: none;
+                "
+              >
+                <i class="fab fa-github"></i>
+                <span>Repository GitHub</span>
+              </a>
+              <a
+                href="#"
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: 8px;
+                  color: var(--primary);
+                  text-decoration: none;
+                "
+              >
+                <i class="fas fa-file-pdf"></i>
+                <span>Cahier des charges</span>
+              </a>
+              <a
+                href="#"
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: 8px;
+                  color: var(--primary);
+                  text-decoration: none;
+                "
+              >
+                <i class="fas fa-link"></i>
+                <span>Documentation technique</span>
+              </a>
+              <a
+                href="#"
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: 8px;
+                  color: var(--primary);
+                  text-decoration: none;
+                "
+              >
+                <i class="fas fa-slack"></i>
+                <span>Channel Slack</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer (same as index.html) -->
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-column">
+            <h3>CollabDev</h3>
+            <ul>
+              <li><a href="#">À propos</a></li>
+              <li><a href="#">Carrières</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Statut</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>Ressources</h3>
+            <ul>
+              <li><a href="#">Documentation</a></li>
+              <li><a href="#">Guide du débutant</a></li>
+              <li><a href="#">API</a></li>
+              <li><a href="#">Communauté</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>Support</h3>
+            <ul>
+              <li><a href="#">Aide</a></li>
+              <li><a href="#">Contact</a></li>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">Sécurité</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>Légal</h3>
+            <ul>
+              <li><a href="#">Conditions</a></li>
+              <li><a href="#">Confidentialité</a></li>
+              <li><a href="#">Cookies</a></li>
+              <li><a href="#">Licences</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2023 CollabDev. Tous droits réservés.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Contribution Request Modal -->
+    <div class="modal" id="contributionRequestModal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2 class="modal-title">Demande de contribution</h2>
+        <form id="contributionRequestForm">
+          <div class="form-group">
+            <label for="requestRole">Rôle souhaité</label>
+            <select id="requestRole" class="form-control" required>
+              <option value="">-- Sélectionner --</option>
+              <option value="frontend">Développeur Frontend</option>
+              <option value="backend">Développeur Backend</option>
+              <option value="designer">Designer UI/UX</option>
+              <option value="tester">Testeur</option>
+              <option value="other">Autre</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="requestExperience">Niveau d'expérience</label>
+            <select id="requestExperience" class="form-control" required>
+              <option value="beginner">Débutant</option>
+              <option value="intermediate">Intermédiaire</option>
+              <option value="advanced">Avancé</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="requestMessage"
+              >Message au gestionnaire (optionnel)</label
+            >
+            <textarea
+              id="requestMessage"
+              class="form-control"
+              placeholder="Pourquoi souhaitez-vous contribuer à ce projet ?"
+            ></textarea>
+          </div>
+          <div class="form-actions">
+            <button type="button" class="btn btn-outline close-modal-btn">
+              Annuler
+            </button>
+            <button type="submit" class="btn btn-primary">
+              Envoyer la demande
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script src="assets/js/auth.js"></script>
+    <script src="assets/js/project.js"></script>
+    <script>
+      // DOM Elements
+      const projectTabs = document.querySelectorAll(".project-tab");
+      const tabContents = {
+        description: document.getElementById("descriptionTab"),
+        features: document.getElementById("featuresTab"),
+        contributions: document.getElementById("contributionsTab"),
+        discussion: document.getElementById("discussionTab"),
+      };
+      const contributeBtn = document.getElementById("contributeBtn");
+      const voteBtn = document.getElementById("voteBtn");
+      const contributionRequestModal = document.getElementById(
+        "contributionRequestModal"
+      );
+      const contributionRequestForm = document.getElementById(
+        "contributionRequestForm"
+      );
+      const closeModalBtns = document.querySelectorAll(
+        ".close-modal, .close-modal-btn"
+      );
+      const managerControls = document.querySelectorAll(".manager-controls");
+
+      // Current user state (simulated)
+      const currentUser = {
+        id: 123,
+        name: "Jean Dupont",
+        role: "user", // "manager" to see manager controls
+        hasVoted: false,
+      };
+
+      // Initialize the page
+      document.addEventListener("DOMContentLoaded", () => {
+        setupEventListeners();
+
+        // Simulate manager view (for demo)
+        if (new URLSearchParams(window.location.search).has("manager")) {
+          managerControls.forEach(
+            (control) => (control.style.display = "block")
+          );
+        }
+      });
+
+      function setupEventListeners() {
+        // Tab switching
+        projectTabs.forEach((tab) => {
+          tab.addEventListener("click", () => {
+            projectTabs.forEach((t) => t.classList.remove("active"));
+            tab.classList.add("active");
+
+            Object.values(tabContents).forEach(
+              (content) => (content.style.display = "none")
+            );
+            const tabName = tab.getAttribute("data-tab");
+            tabContents[tabName].style.display = "block";
+          });
+        });
+
+        // Contribution button
+        contributeBtn.addEventListener("click", () => {
+          if (currentUser) {
+            toggleModal(contributionRequestModal);
+          } else {
+            alert("Veuillez vous connecter pour contribuer à un projet");
+            // In a real app, you would show the login modal
+          }
+        });
+
+        // Vote button
+        voteBtn.addEventListener("click", () => {
+          if (!currentUser) {
+            alert("Veuillez vous connecter pour voter");
+            return;
+          }
+
+          if (currentUser.hasVoted) {
+            alert("Vous avez déjà voté pour ce projet");
+          } else {
+            currentUser.hasVoted = true;
+            voteBtn.innerHTML = '<i class="fas fa-star"></i> Vous avez voté';
+            alert("Merci pour votre vote !");
+          }
+        });
+
+        // Contribution request form
+        contributionRequestForm.addEventListener("submit", (e) => {
+          e.preventDefault();
+
+          const role = document.getElementById("requestRole").value;
+          const experience = document.getElementById("requestExperience").value;
+          const message = document.getElementById("requestMessage").value;
+
+          // In a real app, you would make an API call here
+          console.log("Contribution request:", { role, experience, message });
+
+          alert("Votre demande a été envoyée au gestionnaire du projet");
+          toggleModal(contributionRequestModal);
+        });
+
+        // Close modals
+        closeModalBtns.forEach((btn) => {
+          btn.addEventListener("click", () => {
+            contributionRequestModal.style.display = "none";
+          });
+        });
+      }
+
+      function toggleModal(modal) {
+        modal.style.display = modal.style.display === "flex" ? "none" : "flex";
+      }
+    </script>
+  </body>
+</html>

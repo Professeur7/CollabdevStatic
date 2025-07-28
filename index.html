@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CollabDev - Plateforme de Collaboration</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/css/index.css" />
+    <link rel="stylesheet" href="../assets/css/project.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="container">
+        <nav class="navbar">
+          <a href="#" class="logo">
+            <i class="fas fa-code-branch"></i>
+            CollabDev
+          </a>
+          <div class="nav-links">
+            <a href="#">Découvrir</a>
+            <a href="./project.html">Projets</a>
+            <a href="#">Comment ça marche</a>
+            <a href="#">À propos</a>
+          </div>
+          <div class="auth-buttons">
+            <button class="btn btn-outline" id="loginBtn">Connexion</button>
+            <button class="btn btn-primary" id="registerBtn">
+              Inscription
+            </button>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <h1>Collaborez sur des projets open source passionnants</h1>
+        <p>
+          Rejoignez une communauté de développeurs, designers et créateurs pour
+          construire ensemble des projets innovants. Gagnez des récompenses et
+          montez en compétences.
+        </p>
+        <div class="hero-buttons">
+          <button class="btn btn-primary">Découvrir les projets</button>
+          <button class="btn btn-outline">Comment ça marche</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+      <div class="container">
+        <div class="section-title">
+          <h2>Pourquoi choisir CollabDev ?</h2>
+        </div>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-users"></i>
+            </div>
+            <h3>Communauté engagée</h3>
+            <p>
+              Rejoignez une communauté de professionnels et passionnés prêts à
+              collaborer et partager leurs connaissances.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-medal"></i>
+            </div>
+            <h3>Système de récompenses</h3>
+            <p>
+              Gagnez des coins en contribuant aux projets et débloquez l'accès à
+              des projets plus avancés.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-project-diagram"></i>
+            </div>
+            <h3>Gestion simplifiée</h3>
+            <p>
+              Proposez vos idées et laissez les gestionnaires techniques
+              s'occuper de l'organisation du projet.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects">
+      <div class="container">
+        <div class="section-title">
+          <h2>Projets récents</h2>
+        </div>
+        <div class="projects-filter">
+          <button class="filter-btn active">Tous</button>
+          <button class="filter-btn">Développement</button>
+          <button class="filter-btn">Design</button>
+          <button class="filter-btn">Marketing</button>
+          <button class="filter-btn">Débutant</button>
+          <button class="filter-btn">Avancé</button>
+        </div>
+        <div class="projects-grid">
+          <!-- Project cards will be dynamically loaded here -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-column">
+            <h3>CollabDev</h3>
+            <ul>
+              <li><a href="#">À propos</a></li>
+              <li><a href="#">Carrières</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Statut</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>Ressources</h3>
+            <ul>
+              <li><a href="#">Documentation</a></li>
+              <li><a href="#">Guide du débutant</a></li>
+              <li><a href="#">API</a></li>
+              <li><a href="#">Communauté</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>Support</h3>
+            <ul>
+              <li><a href="#">Aide</a></li>
+              <li><a href="#">Contact</a></li>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">Sécurité</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>Légal</h3>
+            <ul>
+              <li><a href="#">Conditions</a></li>
+              <li><a href="#">Confidentialité</a></li>
+              <li><a href="#">Cookies</a></li>
+              <li><a href="#">Licences</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2023 CollabDev. Tous droits réservés.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div class="modal" id="loginModal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2 class="modal-title">Connexion</h2>
+        <form id="loginForm">
+          <div class="form-group">
+            <label for="loginEmail">Email</label>
+            <input type="email" id="loginEmail" class="form-control" required />
+          </div>
+          <div class="form-group">
+            <label for="loginPassword">Mot de passe</label>
+            <input
+              type="password"
+              id="loginPassword"
+              class="form-control"
+              required
+            />
+          </div>
+          <div class="form-actions">
+            <button type="button" class="btn btn-outline close-modal-btn">
+              Annuler
+            </button>
+            <button type="submit" class="btn btn-primary">Se connecter</button>
+          </div>
+        </form>
+        <p style="text-align: center; margin-top: 20px">
+          Pas encore de compte ?
+          <a href="#" id="switchToRegister">S'inscrire</a>
+        </p>
+      </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div class="modal" id="registerModal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2 class="modal-title">Inscription</h2>
+        <form id="registerForm">
+          <div class="form-group">
+            <label for="registerUsername">Nom d'utilisateur</label>
+            <input
+              type="text"
+              id="registerUsername"
+              class="form-control"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="registerEmail">Email</label>
+            <input
+              type="email"
+              id="registerEmail"
+              class="form-control"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="registerPassword">Mot de passe</label>
+            <input
+              type="password"
+              id="registerPassword"
+              class="form-control"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="registerConfirmPassword"
+              >Confirmer le mot de passe</label
+            >
+            <input
+              type="password"
+              id="registerConfirmPassword"
+              class="form-control"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label>Profil</label>
+            <div style="display: flex; gap: 15px; margin-top: 10px">
+              <label style="display: flex; align-items: center; gap: 5px">
+                <input type="radio" name="profile" value="developer" checked />
+                Développeur
+              </label>
+              <label style="display: flex; align-items: center; gap: 5px">
+                <input type="radio" name="profile" value="designer" /> Designer
+              </label>
+              <label style="display: flex; align-items: center; gap: 5px">
+                <input type="radio" name="profile" value="other" /> Autre
+              </label>
+            </div>
+          </div>
+          <div class="form-actions">
+            <button type="button" class="btn btn-outline close-modal-btn">
+              Annuler
+            </button>
+            <button type="submit" class="btn btn-primary">S'inscrire</button>
+          </div>
+        </form>
+        <p style="text-align: center; margin-top: 20px">
+          Déjà un compte ? <a href="#" id="switchToLogin">Se connecter</a>
+        </p>
+      </div>
+    </div>
+
+    <!-- Dashboard (hidden by default) -->
+    <div id="dashboard" style="display: none">
+      <div class="dashboard">
+        <div class="sidebar">
+          <ul class="sidebar-menu">
+            <li>
+              <a href="#" class="active"
+                ><i class="fas fa-home"></i> Tableau de bord</a
+              >
+            </li>
+            <li>
+              <a href="#"><i class="fas fa-project-diagram"></i> Mes projets</a>
+            </li>
+            <li>
+              <a href="#"><i class="fas fa-code"></i> Mes contributions</a>
+            </li>
+            <li>
+              <a href="#"><i class="fas fa-bell"></i> Notifications</a>
+            </li>
+            <li>
+              <a href="#"><i class="fas fa-user"></i> Mon profil</a>
+            </li>
+            <li>
+              <a href="#"><i class="fas fa-cog"></i> Paramètres</a>
+            </li>
+            <li>
+              <a href="#" id="logoutBtn"
+                ><i class="fas fa-sign-out-alt"></i> Déconnexion</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="main-content">
+          <div class="page-header">
+            <h2>Tableau de bord</h2>
+            <button class="btn btn-primary" id="newProjectBtn">
+              <i class="fas fa-plus"></i> Nouveau projet
+            </button>
+          </div>
+          <div class="projects-grid">
+            <!-- User projects will be loaded here -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../assets/js/auth.js"></script>
+    <script src="../assets/js/index.js"></script>
+    <script>
+      // Sample projects data
+      const sampleProjects = [
+        {
+          id: 1,
+          title: "Plateforme de gestion de tâches",
+          description:
+            "Une application web pour gérer les tâches d'équipe avec des tableaux Kanban et des rapports.",
+          tags: ["JavaScript", "React", "Node.js"],
+          stars: 45,
+          contributors: 8,
+          level: "intermediate",
+        },
+        {
+          id: 2,
+          title: "Application mobile de recettes",
+          description:
+            "App iOS/Android pour découvrir et partager des recettes de cuisine avec système de notation.",
+          tags: ["Flutter", "Firebase", "UI/UX"],
+          stars: 32,
+          contributors: 5,
+          level: "beginner",
+        },
+        {
+          id: 3,
+          title: "Analyseur de données Twitter",
+          description:
+            "Outil pour analyser les tendances Twitter avec visualisation de données et rapports.",
+          tags: ["Python", "Django", "Data Science"],
+          stars: 78,
+          contributors: 12,
+          level: "advanced",
+        },
+        {
+          id: 4,
+          title: "Site e-commerce écologique",
+          description:
+            "Plateforme de vente en ligne pour produits écologiques avec système de récompenses.",
+          tags: ["PHP", "Laravel", "MySQL"],
+          stars: 29,
+          contributors: 6,
+          level: "intermediate",
+        },
+        {
+          id: 5,
+          title: "Jeu éducatif pour enfants",
+          description:
+            "Jeu mobile pour apprendre les mathématiques aux enfants de 6-10 ans.",
+          tags: ["Unity", "C#", "Game Design"],
+          stars: 56,
+          contributors: 9,
+          level: "beginner",
+        },
+        {
+          id: 6,
+          title: "Système de recommandation IA",
+          description:
+            "Moteur de recommandation basé sur l'IA pour les services de streaming.",
+          tags: ["Python", "TensorFlow", "Machine Learning"],
+          stars: 92,
+          contributors: 15,
+          level: "advanced",
+        },
+      ];
+
+      // DOM Elements
+      const loginBtn = document.getElementById("loginBtn");
+      const registerBtn = document.getElementById("registerBtn");
+      const loginModal = document.getElementById("loginModal");
+      const registerModal = document.getElementById("registerModal");
+      const closeModalBtns = document.querySelectorAll(
+        ".close-modal, .close-modal-btn"
+      );
+      const switchToLogin = document.getElementById("switchToLogin");
+      const switchToRegister = document.getElementById("switchToRegister");
+      const loginForm = document.getElementById("loginForm");
+      const registerForm = document.getElementById("registerForm");
+      const projectsGrid = document.querySelector(".projects-grid");
+      const filterBtns = document.querySelectorAll(".filter-btn");
+      const mainContent = document.querySelector("main");
+      const dashboard = document.getElementById("dashboard");
+      const logoutBtn = document.getElementById("logoutBtn");
+      const newProjectBtn = document.getElementById("newProjectBtn");
+
+      // Current user state
+      let currentUser = null;
+
+      // Initialize the page
+      document.addEventListener("DOMContentLoaded", () => {
+        loadProjects(sampleProjects);
+        setupEventListeners();
+      });
+
+      function setupEventListeners() {
+        // Modal toggles
+        loginBtn.addEventListener("click", () => toggleModal(loginModal));
+        registerBtn.addEventListener("click", () => toggleModal(registerModal));
+
+        // Close modals
+        closeModalBtns.forEach((btn) => {
+          btn.addEventListener("click", () => {
+            loginModal.style.display = "none";
+            registerModal.style.display = "none";
+          });
+        });
+
+        // Switch between login/register modals
+        switchToLogin.addEventListener("click", (e) => {
+          e.preventDefault();
+          registerModal.style.display = "none";
+          loginModal.style.display = "flex";
+        });
+
+        switchToRegister.addEventListener("click", (e) => {
+          e.preventDefault();
+          loginModal.style.display = "none";
+          registerModal.style.display = "flex";
+        });
+
+        // Form submissions
+        loginForm.addEventListener("submit", handleLogin);
+        registerForm.addEventListener("submit", handleRegister);
+
+        // Project filters
+        filterBtns.forEach((btn) => {
+          btn.addEventListener("click", () => {
+            filterBtns.forEach((b) => b.classList.remove("active"));
+            btn.classList.add("active");
+            filterProjects(btn.textContent);
+          });
+        });
+
+        // Logout
+        if (logoutBtn) {
+          logoutBtn.addEventListener("click", handleLogout);
+        }
+
+        // New project
+        if (newProjectBtn) {
+          newProjectBtn.addEventListener("click", () => {
+            alert("Fonctionnalité de création de projet à implémenter");
+          });
+        }
+      }
+
+      function toggleModal(modal) {
+        modal.style.display = modal.style.display === "flex" ? "none" : "flex";
+      }
+
+      function loadProjects(projects) {
+        projectsGrid.innerHTML = "";
+
+        projects.forEach((project) => {
+          const projectCard = document.createElement("div");
+          projectCard.className = "project-card";
+
+          projectCard.innerHTML = `
+                    <div class="project-image">
+                        <i class="fas fa-project-diagram fa-3x"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>${project.title}</h3>
+                        <p>${project.description}</p>
+                        <div class="project-meta">
+                            <div class="project-tags">
+                                ${project.tags
+                                  .map(
+                                    (tag) =>
+                                      `<span class="project-tag">${tag}</span>`
+                                  )
+                                  .join("")}
+                            </div>
+                            <div class="project-stats">
+                                <span class="project-stat"><i class="fas fa-star"></i> ${
+                                  project.stars
+                                }</span>
+                                <span class="project-stat"><i class="fas fa-users"></i> ${
+                                  project.contributors
+                                }</span>
+                            </div>
+                        </div>
+                    </div>
+                `;
+
+          projectsGrid.appendChild(projectCard);
+        });
+      }
+
+      function filterProjects(filter) {
+        let filteredProjects = [...sampleProjects];
+
+        if (filter === "Développement") {
+          filteredProjects = filteredProjects.filter((p) =>
+            p.tags.some((tag) =>
+              [
+                "JavaScript",
+                "React",
+                "Node.js",
+                "Python",
+                "PHP",
+                "C#",
+              ].includes(tag)
+            )
+          );
+        } else if (filter === "Design") {
+          filteredProjects = filteredProjects.filter((p) =>
+            p.tags.some((tag) => ["UI/UX", "Game Design"].includes(tag))
+          );
+        } else if (filter === "Débutant") {
+          filteredProjects = filteredProjects.filter(
+            (p) => p.level === "beginner"
+          );
+        } else if (filter === "Avancé") {
+          filteredProjects = filteredProjects.filter(
+            (p) => p.level === "advanced"
+          );
+        }
+
+        loadProjects(filteredProjects);
+      }
+
+      function handleLogin(e) {
+        e.preventDefault();
+
+        const email = document.getElementById("loginEmail").value;
+        const password = document.getElementById("loginPassword").value;
+
+        // Simple validation
+        if (!email || !password) {
+          alert("Veuillez remplir tous les champs");
+          return;
+        }
+
+        // In a real app, you would make an API call here
+        currentUser = {
+          email,
+          username: email.split("@")[0],
+          profile: "developer",
+        };
+
+        // Hide login modal and show dashboard
+        loginModal.style.display = "none";
+        mainContent.style.display = "none";
+        document.querySelector("footer").style.display = "none";
+        dashboard.style.display = "block";
+
+        // Update UI for logged in user
+        updateUserUI();
+      }
+
+      function handleRegister(e) {
+        e.preventDefault();
+
+        const username = document.getElementById("registerUsername").value;
+        const email = document.getElementById("registerEmail").value;
+        const password = document.getElementById("registerPassword").value;
+        const confirmPassword = document.getElementById(
+          "registerConfirmPassword"
+        ).value;
+        const profile = document.querySelector(
+          'input[name="profile"]:checked'
+        ).value;
+
+        // Simple validation
+        if (!username || !email || !password || !confirmPassword) {
+          alert("Veuillez remplir tous les champs");
+          return;
+        }
+
+        if (password !== confirmPassword) {
+          alert("Les mots de passe ne correspondent pas");
+          return;
+        }
+
+        // In a real app, you would make an API call here
+        currentUser = {
+          email,
+          username,
+          profile,
+        };
+
+        // Hide register modal and show dashboard
+        registerModal.style.display = "none";
+        mainContent.style.display = "none";
+        document.querySelector("footer").style.display = "none";
+        dashboard.style.display = "block";
+
+        // Update UI for logged in user
+        updateUserUI();
+      }
+
+      function handleLogout() {
+        currentUser = null;
+        dashboard.style.display = "none";
+        mainContent.style.display = "block";
+        document.querySelector("footer").style.display = "block";
+      }
+
+      function updateUserUI() {
+        // In a real app, you would update the UI with user-specific data
+        console.log("User logged in:", currentUser);
+      }
+    </script>
+  </body>
+</html>
