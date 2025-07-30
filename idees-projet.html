@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Idées de Projets | CollabDev</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../assets/css/index.css" />
+    <link rel="stylesheet" href="../assets/css/components.css" />
+    <link rel="stylesheet" href="../assets/css/projects.css" />
+    <link rel="stylesheet" href="../assets/css/ideas.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="glass-header">
+      <div class="container">
+        <nav class="navbar">
+          <a href="index.html" class="logo">
+            <i class="fas fa-code-branch"></i>
+            <span>CollabDev</span>
+          </a>
+
+          <div class="search-container">
+            <div class="search-bar">
+              <input
+                type="text"
+                placeholder="Rechercher des idées..."
+                id="ideaSearch"
+              />
+              <button class="search-btn">
+                <i class="fas fa-search"></i>
+              </button>
+              <div class="search-results glass-panel"></div>
+            </div>
+          </div>
+
+          <div class="header-actions">
+            <button class="notification-btn">
+              <i class="fas fa-bell"></i>
+              <span class="notification-badge">2</span>
+            </button>
+            <button class="theme-toggle" id="themeToggle">
+              <i class="fas fa-moon"></i>
+            </button>
+            <div class="user-avatar" id="userMenuBtn">
+              <img src="assets/images/avatars/user1.jpg" alt="Profil" />
+              <div class="user-status online"></div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="dashboard-layout">
+      <!-- Sidebar -->
+      <aside class="glass-sidebar">
+        <div class="user-profile">
+          <div class="avatar-container">
+            <img
+              src="assets/images/avatars/user1.jpg"
+              alt="Profil"
+              class="profile-avatar"
+            />
+            <div class="level-badge">24</div>
+          </div>
+          <h3>Alex Dupont</h3>
+          <p>Développeur Fullstack</p>
+          <div class="xp-bar">
+            <div class="xp-progress" style="width: 65%"></div>
+            <span>2,450/3,800 XP</span>
+          </div>
+        </div>
+
+        <nav class="sidebar-nav">
+          <a href="dashboard.html">
+            <i class="fas fa-home"></i>
+            <span>Tableau de bord</span>
+          </a>
+          <a href="projects.html">
+            <i class="fas fa-project-diagram"></i>
+            <span>Mes projets</span>
+            <span class="nav-badge">8</span>
+          </a>
+          <a href="idees-projets.html" class="active">
+            <i class="fas fa-lightbulb"></i>
+            <span>Idées de projets</span>
+            <span class="nav-badge">5</span>
+          </a>
+          <a href="contributions.html">
+            <i class="fas fa-code-merge"></i>
+            <span>Contributions</span>
+            <span class="nav-badge">5</span>
+          </a>
+          <a href="messages.html">
+            <i class="fas fa-envelope"></i>
+            <span>Messages</span>
+            <span class="nav-badge">3</span>
+          </a>
+        </nav>
+
+        <div class="sidebar-footer">
+          <button class="btn-create" id="newIdeaBtn">
+            <i class="fas fa-plus"></i>
+            Nouvelle idée
+          </button>
+        </div>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="dashboard-content">
+        <div class="page-header">
+          <h1>
+            <i class="fas fa-lightbulb"></i>
+            Idées de Projets
+          </h1>
+          <div class="page-actions">
+            <div class="view-toggle">
+              <button class="btn-icon active" data-view="grid">
+                <i class="fas fa-th-large"></i>
+              </button>
+              <button class="btn-icon" data-view="list">
+                <i class="fas fa-list"></i>
+              </button>
+            </div>
+            <div class="filter-dropdown">
+              <button class="btn-outline" id="filterDropdown">
+                <i class="fas fa-filter"></i>
+                Filtrer
+                <i class="fas fa-chevron-down"></i>
+              </button>
+              <div class="dropdown-menu glass-panel">
+                <div class="filter-group">
+                  <h4>Statut</h4>
+                  <label class="filter-checkbox">
+                    <input type="checkbox" checked />
+                    <span>En discussion</span>
+                  </label>
+                  <label class="filter-checkbox">
+                    <input type="checkbox" checked />
+                    <span>En évaluation</span>
+                  </label>
+                  <label class="filter-checkbox">
+                    <input type="checkbox" />
+                    <span>Approuvé</span>
+                  </label>
+                  <label class="filter-checkbox">
+                    <input type="checkbox" />
+                    <span>Rejeté</span>
+                  </label>
+                </div>
+                <div class="filter-group">
+                  <h4>Catégorie</h4>
+                  <label class="filter-checkbox">
+                    <input type="checkbox" checked />
+                    <span>Développement</span>
+                  </label>
+                  <label class="filter-checkbox">
+                    <input type="checkbox" checked />
+                    <span>Design</span>
+                  </label>
+                  <label class="filter-checkbox">
+                    <input type="checkbox" checked />
+                    <span>Business</span>
+                  </label>
+                </div>
+                <div class="filter-actions">
+                  <button class="btn-link">Réinitialiser</button>
+                  <button class="btn-primary">Appliquer</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ideas Grid View -->
+        <div class="ideas-container grid-view" id="ideasContainer">
+          <!-- Idée 1 -->
+          <div class="idea-card glass-panel">
+            <div class="idea-header">
+              <div class="idea-badge" style="background-color: #8b5cf6">
+                <i class="fas fa-lightbulb"></i>
+              </div>
+              <div class="idea-meta">
+                <span class="idea-status discussion">En discussion</span>
+                <span class="idea-category">Développement</span>
+              </div>
+              <div class="idea-actions">
+                <button class="btn-icon">
+                  <i class="fas fa-ellipsis-v"></i>
+                </button>
+                <div class="dropdown-menu">
+                  <a href="#"><i class="fas fa-edit"></i> Modifier</a>
+                  <a href="#"
+                    ><i class="fas fa-project-diagram"></i> Convertir en
+                    projet</a
+                  >
+                  <a href="#"><i class="fas fa-archive"></i> Archiver</a>
+                </div>
+              </div>
+            </div>
+            <h3 class="idea-title">Plateforme d'apprentissage en ligne</h3>
+            <p class="idea-description">
+              Créer une plateforme communautaire où les développeurs peuvent
+              partager des tutoriels et suivre des parcours d'apprentissage.
+            </p>
+            <div class="idea-stats">
+              <div class="stat-item">
+                <i class="fas fa-thumbs-up"></i>
+                <span>24</span>
+              </div>
+              <div class="stat-item">
+                <i class="fas fa-comment"></i>
+                <span>12</span>
+              </div>
+              <div class="stat-item">
+                <i class="fas fa-user-plus"></i>
+                <span>8</span>
+              </div>
+            </div>
+            <div class="idea-footer">
+              <div class="idea-author">
+                <img src="assets/images/avatars/user2.jpg" alt="Auteur" />
+                <span>Marie L.</span>
+              </div>
+              <div class="idea-cta">
+                <button class="btn-outline btn-sm">Participer</button>
+                <button class="btn-primary btn-sm">Détails</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Idée 2 -->
+          <div class="idea-card glass-panel">
+            <div class="idea-header">
+              <div class="idea-badge" style="background-color: #10b981">
+                <i class="fas fa-chart-line"></i>
+              </div>
+              <div class="idea-meta">
+                <span class="idea-status evaluation">En évaluation</span>
+                <span class="idea-category">Business</span>
+              </div>
+              <div class="idea-actions">
+                <button class="btn-icon">
+                  <i class="fas fa-ellipsis-v"></i>
+                </button>
+              </div>
+            </div>
+            <h3 class="idea-title">Marketplace pour artisans</h3>
+            <p class="idea-description">
+              Marketplace spécialisée pour les artisans locaux avec système de
+              réservation et paiement sécurisé.
+            </p>
+            <div class="idea-stats">
+              <div class="stat-item">
+                <i class="fas fa-thumbs-up"></i>
+                <span>42</span>
+              </div>
+              <div class="stat-item">
+                <i class="fas fa-comment"></i>
+                <span>18</span>
+              </div>
+              <div class="stat-item">
+                <i class="fas fa-user-plus"></i>
+                <span>15</span>
+              </div>
+            </div>
+            <div class="idea-footer">
+              <div class="idea-author">
+                <img src="assets/images/avatars/user3.jpg" alt="Auteur" />
+                <span>Jean D.</span>
+              </div>
+              <div class="idea-cta">
+                <button class="btn-outline btn-sm">Participer</button>
+                <button class="btn-primary btn-sm">Détails</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Idée 3 -->
+          <div class="idea-card glass-panel">
+            <div class="idea-header">
+              <div class="idea-badge" style="background-color: #3b82f6">
+                <i class="fas fa-mobile-alt"></i>
+              </div>
+              <div class="idea-meta">
+                <span class="idea-status approved">Approuvé</span>
+                <span class="idea-category">Mobile</span>
+              </div>
+              <div class="idea-actions">
+                <button class="btn-icon">
+                  <i class="fas fa-ellipsis-v"></i>
+                </button>
+              </div>
+            </div>
+            <h3 class="idea-title">Appli de gestion de budget</h3>
+            <p class="idea-description">
+              Application mobile avec IA pour suivre les dépenses et suggérer
+              des économies basées sur les habitudes.
+            </p>
+            <div class="idea-stats">
+              <div class="stat-item">
+                <i class="fas fa-thumbs-up"></i>
+                <span>35</span>
+              </div>
+              <div class="stat-item">
+                <i class="fas fa-comment"></i>
+                <span>22</span>
+              </div>
+              <div class="stat-item">
+                <i class="fas fa-user-plus"></i>
+                <span>12</span>
+              </div>
+            </div>
+            <div class="idea-footer">
+              <div class="idea-author">
+                <img src="assets/images/avatars/user4.jpg" alt="Auteur" />
+                <span>Sophie M.</span>
+              </div>
+              <div class="idea-cta">
+                <button class="btn-primary btn-sm">Convertir en projet</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Idée 4 -->
+          <div class="idea-card glass-panel">
+            <div class="idea-header">
+              <div class="idea-badge" style="background-color: #f59e0b">
+                <i class="fas fa-gamepad"></i>
+              </div>
+              <div class="idea-meta">
+                <span class="idea-status discussion">En discussion</span>
+                <span class="idea-category">Jeux</span>
+              </div>
+              <div class="idea-actions">
+                <button class="btn-icon">
+                  <i class="fas fa-ellipsis-v"></i>
+                </button>
+              </div>
+            </div>
+            <h3 class="idea-title">Jeu éducatif pour enfants</h3>
+            <p class="idea-description">
+              Jeu mobile éducatif avec mini-jeux pour apprendre les maths et les
+              sciences de manière ludique.
+            </p>
+            <div class="idea-stats">
+              <div class="stat-item">
+                <i class="fas fa-thumbs-up"></i>
+                <span>18</span>
+              </div>
+              <div class="stat-item">
+                <i class="fas fa-comment"></i>
+                <span>9</span>
+              </div>
+              <div class="stat-item">
+                <i class="fas fa-user-plus"></i>
+                <span>5</span>
+              </div>
+            </div>
+            <div class="idea-footer">
+              <div class="idea-author">
+                <img src="assets/images/avatars/user5.jpg" alt="Auteur" />
+                <span>Thomas B.</span>
+              </div>
+              <div class="idea-cta">
+                <button class="btn-outline btn-sm">Participer</button>
+                <button class="btn-primary btn-sm">Détails</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pagination -->
+        <div class="pagination">
+          <button class="btn-icon disabled">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button class="page-number active">1</button>
+          <button class="page-number">2</button>
+          <button class="page-number">3</button>
+          <span class="page-ellipsis">...</span>
+          <button class="page-number">5</button>
+          <button class="btn-icon">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+      </main>
+    </div>
+
+    <!-- New Idea Modal -->
+    <div class="modal glass-modal" id="newIdeaModal">
+      <div class="modal-content">
+        <button class="close-modal">
+          <i class="fas fa-times"></i>
+        </button>
+        <h2>Soumettre une nouvelle idée</h2>
+        <form id="newIdeaForm">
+          <div class="form-group">
+            <label for="ideaTitle">Titre de l'idée</label>
+            <input
+              type="text"
+              id="ideaTitle"
+              placeholder="Donnez un titre à votre idée"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="ideaDescription">Description détaillée</label>
+            <textarea
+              id="ideaDescription"
+              placeholder="Décrivez votre idée en détails (objectifs, fonctionnalités, public cible...)"
+              rows="5"
+              required
+            ></textarea>
+          </div>
+          <div class="form-group">
+            <label for="ideaCategory">Catégorie</label>
+            <select id="ideaCategory" required>
+              <option value="">Sélectionner une catégorie</option>
+              <option value="web">Développement Web</option>
+              <option value="mobile">Mobile</option>
+              <option value="ai">IA/Data Science</option>
+              <option value="design">UI/UX Design</option>
+              <option value="business">Business</option>
+              <option value="game">Jeux</option>
+              <option value="other">Autre</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Visibilité</label>
+            <div class="visibility-selector">
+              <input
+                type="radio"
+                name="ideaVisibility"
+                id="ideaVisibilityPublic"
+                value="public"
+                checked
+              />
+              <label for="ideaVisibilityPublic">
+                <i class="fas fa-globe"></i>
+                <span>Public (visible par tous)</span>
+              </label>
+              <input
+                type="radio"
+                name="ideaVisibility"
+                id="ideaVisibilityPrivate"
+                value="private"
+              />
+              <label for="ideaVisibilityPrivate">
+                <i class="fas fa-lock"></i>
+                <span>Privé (uniquement pour mon équipe)</span>
+              </label>
+            </div>
+          </div>
+          <div class="form-actions">
+            <button type="button" class="btn-outline close-modal">
+              Annuler
+            </button>
+            <button type="submit" class="btn-primary">
+              <i class="fas fa-lightbulb"></i>
+              Soumettre l'idée
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Idea Detail Modal -->
+    <div class="modal glass-modal" id="ideaDetailModal">
+      <div class="modal-content large">
+        <button class="close-modal">
+          <i class="fas fa-times"></i>
+        </button>
+
+        <div class="idea-detail-header">
+          <div class="idea-badge" style="background-color: #8b5cf6">
+            <i class="fas fa-lightbulb"></i>
+          </div>
+          <div>
+            <h2>Plateforme d'apprentissage en ligne</h2>
+            <div class="idea-meta">
+              <span class="idea-status discussion">En discussion</span>
+              <span class="idea-category">Développement</span>
+              <span class="idea-date"
+                ><i class="far fa-calendar"></i> Soumis le 15/06/2023</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="idea-detail-content">
+          <div class="idea-main">
+            <div class="idea-description">
+              <h3>Description</h3>
+              <p>
+                Créer une plateforme communautaire où les développeurs peuvent
+                partager des tutoriels et suivre des parcours d'apprentissage.
+                La plateforme permettrait aux utilisateurs de :
+              </p>
+              <ul>
+                <li>Créer et suivre des parcours d'apprentissage structurés</li>
+                <li>Partager des tutoriels et recevoir des feedbacks</li>
+                <li>Obtenir des badges et certifications</li>
+                <li>Participer à des défis de codage</li>
+                <li>Collaborer sur des projets éducatifs</li>
+              </ul>
+            </div>
+
+            <div class="idea-discussion">
+              <h3>
+                Discussion <span class="comment-count">(12 commentaires)</span>
+              </h3>
+
+              <div class="comment-form">
+                <img
+                  src="assets/images/avatars/user1.jpg"
+                  alt="Votre avatar"
+                  class="comment-avatar"
+                />
+                <div class="comment-input-container">
+                  <textarea placeholder="Ajouter un commentaire..."></textarea>
+                  <div class="comment-actions">
+                    <button class="btn-outline btn-sm">Annuler</button>
+                    <button class="btn-primary btn-sm">Commenter</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="comments-list">
+                <!-- Comment 1 -->
+                <div class="comment">
+                  <img
+                    src="assets/images/avatars/user3.jpg"
+                    alt="Avatar"
+                    class="comment-avatar"
+                  />
+                  <div class="comment-content">
+                    <div class="comment-header">
+                      <span class="comment-author">Jean D.</span>
+                      <span class="comment-date">il y a 2 jours</span>
+                    </div>
+                    <p class="comment-text">
+                      J'adore cette idée ! Je pourrais contribuer sur la partie
+                      backend. Est-ce qu'on envisage d'utiliser Node.js ou
+                      plutôt Django ?
+                    </p>
+                    <div class="comment-actions">
+                      <button class="btn-link">Répondre</button>
+                      <button class="btn-link">
+                        <i class="fas fa-thumbs-up"></i> 5
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Comment 2 -->
+                <div class="comment">
+                  <img
+                    src="assets/images/avatars/user2.jpg"
+                    alt="Avatar"
+                    class="comment-avatar"
+                  />
+                  <div class="comment-content">
+                    <div class="comment-header">
+                      <span class="comment-author">Marie L.</span>
+                      <span class="comment-date">il y a 1 jour</span>
+                    </div>
+                    <p class="comment-text">
+                      Merci Jean ! Je pensais à Node.js pour une meilleure
+                      évolutivité, mais je suis ouverte aux suggestions. On
+                      pourrait aussi intégrer un système de review de code.
+                    </p>
+                    <div class="comment-actions">
+                      <button class="btn-link">Répondre</button>
+                      <button class="btn-link">
+                        <i class="fas fa-thumbs-up"></i> 3
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="idea-sidebar">
+            <div class="sidebar-section glass-panel">
+              <div class="idea-stats">
+                <div class="stat-item">
+                  <i class="fas fa-thumbs-up"></i>
+                  <span>24 votes</span>
+                </div>
+                <div class="stat-item">
+                  <i class="fas fa-comment"></i>
+                  <span>12 commentaires</span>
+                </div>
+                <div class="stat-item">
+                  <i class="fas fa-user-plus"></i>
+                  <span>8 participants</span>
+                </div>
+              </div>
+
+              <div class="idea-actions">
+                <button class="btn-primary full-width">
+                  <i class="fas fa-thumbs-up"></i>
+                  Soutenir cette idée
+                </button>
+                <button class="btn-outline full-width">
+                  <i class="fas fa-user-plus"></i>
+                  Participer au projet
+                </button>
+                <button class="btn-primary full-width">
+                  <i class="fas fa-project-diagram"></i>
+                  Convertir en projet
+                </button>
+              </div>
+            </div>
+
+            <div class="sidebar-section glass-panel">
+              <h3>Auteur</h3>
+              <div class="idea-author">
+                <img src="assets/images/avatars/user2.jpg" alt="Auteur" />
+                <div>
+                  <span class="author-name">Marie L.</span>
+                  <span class="author-role">Développeuse Fullstack</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="sidebar-section glass-panel">
+              <h3>Participants</h3>
+              <div class="participants-list">
+                <div class="participant">
+                  <img
+                    src="assets/images/avatars/user3.jpg"
+                    alt="Participant"
+                  />
+                  <span>Jean D.</span>
+                </div>
+                <div class="participant">
+                  <img
+                    src="assets/images/avatars/user1.jpg"
+                    alt="Participant"
+                  />
+                  <span>Alex D.</span>
+                </div>
+                <div class="participant">
+                  <img
+                    src="assets/images/avatars/user4.jpg"
+                    alt="Participant"
+                  />
+                  <span>Sophie M.</span>
+                </div>
+                <button class="btn-link">Voir les 5 autres</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../assets/js/index.js"></script>
+    <script src="../assets/js/theme.js"></script>
+    <script src="../assets/js/ideas.js"></script>
+  </body>
+</html>

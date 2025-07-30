@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Récompenses | CollabDev</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../assets/css/index.css" />
+    <link rel="stylesheet" href="../assets/css/components.css" />
+    <link rel="stylesheet" href="../assets/css/rewards.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="glass-header">
+      <div class="container">
+        <nav class="navbar">
+          <a href="index.html" class="logo">
+            <i class="fas fa-code-branch"></i>
+            <span>CollabDev</span>
+          </a>
+
+          <div class="search-container">
+            <div class="search-bar">
+              <input
+                type="text"
+                placeholder="Rechercher projets, membres, fonctionnalités..."
+                id="globalSearch"
+              />
+              <button class="search-btn">
+                <i class="fas fa-search"></i>
+              </button>
+              <div class="search-results glass-panel"></div>
+            </div>
+          </div>
+
+          <div class="header-actions">
+            <button class="notification-btn">
+              <i class="fas fa-bell"></i>
+              <span class="notification-badge">3</span>
+            </button>
+            <button class="theme-toggle" id="themeToggle">
+              <i class="fas fa-moon"></i>
+            </button>
+            <div class="user-avatar" id="userMenuBtn">
+              <img src="assets/images/avatars/user1.jpg" alt="Profil" />
+              <div class="user-status online"></div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="dashboard-layout">
+      <!-- Sidebar -->
+      <aside class="glass-sidebar">
+        <div class="user-profile">
+          <div class="avatar-container">
+            <img
+              src="assets/images/avatars/user1.jpg"
+              alt="Profil"
+              class="profile-avatar"
+            />
+            <div class="level-badge">24</div>
+          </div>
+          <h3>Alex Dupont</h3>
+          <p>Développeur Fullstack</p>
+          <div class="xp-bar">
+            <div class="xp-progress" style="width: 65%"></div>
+            <span>2,450/3,800 XP</span>
+          </div>
+        </div>
+
+        <nav class="sidebar-nav">
+          <a href="dashboard.html">
+            <i class="fas fa-home"></i>
+            <span>Tableau de bord</span>
+          </a>
+          <a href="projects.html">
+            <i class="fas fa-project-diagram"></i>
+            <span>Mes projets</span>
+          </a>
+          <a href="contributions.html">
+            <i class="fas fa-code-merge"></i>
+            <span>Contributions</span>
+            <span class="nav-badge">5</span>
+          </a>
+          <a href="messages.html">
+            <i class="fas fa-envelope"></i>
+            <span>Messages</span>
+            <span class="nav-badge">3</span>
+          </a>
+          <a href="rewards.html" class="active">
+            <i class="fas fa-trophy"></i>
+            <span>Récompenses</span>
+          </a>
+          <a href="analytics.html">
+            <i class="fas fa-chart-network"></i>
+            <span>Analytics</span>
+          </a>
+        </nav>
+
+        <div class="sidebar-footer">
+          <button class="btn-create">
+            <i class="fas fa-plus"></i>
+            Nouveau projet
+          </button>
+        </div>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="dashboard-content">
+        <div class="page-header">
+          <h1>
+            <i class="fas fa-trophy"></i>
+            Mes Récompenses
+          </h1>
+          <p>Vos badges, niveaux et réalisations sur CollabDev</p>
+        </div>
+
+        <!-- Stats Overview -->
+        <div class="rewards-stats-grid">
+          <div class="stats-card glass-panel">
+            <div class="stats-icon">
+              <i class="fas fa-medal"></i>
+            </div>
+            <div class="stats-info">
+              <h3>Niveau 4</h3>
+              <p>Développeur Confirmé</p>
+            </div>
+            <div class="stats-progress">
+              <div class="progress-bar">
+                <div class="progress-fill" style="width: 65%"></div>
+              </div>
+              <span>2,450/3,800 XP</span>
+            </div>
+          </div>
+
+          <div class="stats-card glass-panel">
+            <div class="stats-icon">
+              <i class="fas fa-bolt"></i>
+            </div>
+            <div class="stats-info">
+              <h3>1,850</h3>
+              <p>Points Collab</p>
+            </div>
+            <div class="stats-badge primary">
+              <i class="fas fa-coins"></i>
+              Top 15%
+            </div>
+          </div>
+
+          <div class="stats-card glass-panel">
+            <div class="stats-icon">
+              <i class="fas fa-award"></i>
+            </div>
+            <div class="stats-info">
+              <h3>8</h3>
+              <p>Badges obtenus</p>
+            </div>
+            <div class="stats-badge success">
+              <i class="fas fa-star"></i>
+              +2 ce mois
+            </div>
+          </div>
+        </div>
+
+        <!-- Badges Section -->
+        <section class="section-card glass-panel">
+          <div class="section-header">
+            <h2>
+              <i class="fas fa-shield-alt"></i>
+              Mes Badges
+            </h2>
+            <div class="section-tabs">
+              <button class="tab-btn active">Tous</button>
+              <button class="tab-btn">Récemment gagnés</button>
+              <button class="tab-btn">En cours</button>
+            </div>
+          </div>
+
+          <div class="badges-grid">
+            <!-- Badge 1 -->
+            <div class="badge-card">
+              <div class="badge-icon gold">
+                <i class="fas fa-code"></i>
+              </div>
+              <h3>Expert Code</h3>
+              <p>50+ contributions validées</p>
+              <div class="badge-date">
+                <i class="fas fa-calendar-alt"></i>
+                Gagné le 10/06/2023
+              </div>
+            </div>
+
+            <!-- Badge 2 -->
+            <div class="badge-card">
+              <div class="badge-icon silver">
+                <i class="fas fa-users"></i>
+              </div>
+              <h3>Team Player</h3>
+              <p>5+ projets collaboratifs</p>
+              <div class="badge-date">
+                <i class="fas fa-calendar-alt"></i>
+                Gagné le 25/05/2023
+              </div>
+            </div>
+
+            <!-- Badge 3 -->
+            <div class="badge-card">
+              <div class="badge-icon bronze">
+                <i class="fas fa-bug"></i>
+              </div>
+              <h3>Chasseur de Bugs</h3>
+              <p>20+ bugs résolus</p>
+              <div class="badge-date">
+                <i class="fas fa-calendar-alt"></i>
+                Gagné le 15/04/2023
+              </div>
+            </div>
+
+            <!-- Badge 4 -->
+            <div class="badge-card locked">
+              <div class="badge-icon">
+                <i class="fas fa-lock"></i>
+              </div>
+              <h3>Mentor</h3>
+              <p>Aider 10 nouveaux membres</p>
+              <div class="badge-progress">
+                <span>3/10 complétés</span>
+                <div class="progress-bar">
+                  <div class="progress-fill" style="width: 30%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Leaderboard Section -->
+        <section class="section-card glass-panel">
+          <div class="section-header">
+            <h2>
+              <i class="fas fa-ranking-star"></i>
+              Classement
+            </h2>
+            <div class="time-filter">
+              <button class="filter-btn active">Mensuel</button>
+              <button class="filter-btn">Trimestriel</button>
+              <button class="filter-btn">Global</button>
+            </div>
+          </div>
+
+          <div class="leaderboard-container">
+            <div class="leaderboard-header">
+              <span class="rank">#</span>
+              <span class="user">Utilisateur</span>
+              <span class="points">Points</span>
+              <span class="badges">Badges</span>
+            </div>
+
+            <div class="leaderboard-list">
+              <!-- Top 1 -->
+              <div class="leaderboard-item top-1">
+                <div class="rank">1</div>
+                <div class="user">
+                  <img src="assets/images/avatars/user7.jpg" alt="Top 1" />
+                  <div class="user-info">
+                    <h4>Sarah K.</h4>
+                    <p>Développeuse Senior</p>
+                  </div>
+                </div>
+                <div class="points">4,850</div>
+                <div class="badges">12</div>
+                <div class="crown">
+                  <i class="fas fa-crown"></i>
+                </div>
+              </div>
+
+              <!-- Top 2 -->
+              <div class="leaderboard-item top-2">
+                <div class="rank">2</div>
+                <div class="user">
+                  <img src="assets/images/avatars/user8.jpg" alt="Top 2" />
+                  <div class="user-info">
+                    <h4>Marc T.</h4>
+                    <p>Architecte Logiciel</p>
+                  </div>
+                </div>
+                <div class="points">4,120</div>
+                <div class="badges">10</div>
+              </div>
+
+              <!-- Top 3 -->
+              <div class="leaderboard-item top-3">
+                <div class="rank">3</div>
+                <div class="user">
+                  <img src="assets/images/avatars/user9.jpg" alt="Top 3" />
+                  <div class="user-info">
+                    <h4>Lucie M.</h4>
+                    <p>DevOps Engineer</p>
+                  </div>
+                </div>
+                <div class="points">3,950</div>
+                <div class="badges">9</div>
+              </div>
+
+              <!-- Current User -->
+              <div class="leaderboard-item current-user">
+                <div class="rank">14</div>
+                <div class="user">
+                  <img src="assets/images/avatars/user1.jpg" alt="Vous" />
+                  <div class="user-info">
+                    <h4>Alex D.</h4>
+                    <p>Développeur Fullstack</p>
+                  </div>
+                </div>
+                <div class="points">1,850</div>
+                <div class="badges">8</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Rewards History -->
+        <section class="section-card glass-panel">
+          <div class="section-header">
+            <h2>
+              <i class="fas fa-history"></i>
+              Historique des Récompenses
+            </h2>
+            <button class="btn-secondary">
+              <i class="fas fa-download"></i>
+              Exporter
+            </button>
+          </div>
+
+          <div class="rewards-history">
+            <div class="history-item">
+              <div class="reward-icon">
+                <i class="fas fa-bolt"></i>
+              </div>
+              <div class="reward-details">
+                <h4>+120 XP</h4>
+                <p>Contribution validée sur TaskFlow</p>
+                <span class="reward-date">15/06/2023</span>
+              </div>
+              <div class="reward-amount positive">+120</div>
+            </div>
+
+            <div class="history-item">
+              <div class="reward-icon">
+                <i class="fas fa-medal"></i>
+              </div>
+              <div class="reward-details">
+                <h4>Badge "Expert Code"</h4>
+                <p>50 contributions validées</p>
+                <span class="reward-date">10/06/2023</span>
+              </div>
+              <div class="reward-amount positive">
+                <i class="fas fa-award"></i>
+              </div>
+            </div>
+
+            <div class="history-item">
+              <div class="reward-icon">
+                <i class="fas fa-coins"></i>
+              </div>
+              <div class="reward-details">
+                <h4>+40 Points Collab</h4>
+                <p>Revue de code sur Appli Recettes</p>
+                <span class="reward-date">05/06/2023</span>
+              </div>
+              <div class="reward-amount positive">+40</div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/theme.js"></script>
+    <script src="assets/js/rewards.js"></script>
+  </body>
+</html>

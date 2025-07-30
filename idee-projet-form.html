@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Soumettre une Idée de Projet | CollabDev</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../assets/css/idee-projet-form.css" />
+  </head>
+  <body>
+    <div class="form-container glass-panel">
+      <div class="form-header">
+        <h1><i class="fas fa-lightbulb"></i> Nouvelle Idée de Projet</h1>
+        <p>Partagez votre idée avec la communauté CollabDev</p>
+      </div>
+
+      <form id="ideeProjetForm">
+        <!-- Titre -->
+        <div class="form-group">
+          <label for="titre">Titre de l'idée *</label>
+          <input
+            type="text"
+            id="titre"
+            name="titre"
+            required
+            placeholder="Donnez un titre clair et concis (ex: Plateforme d'apprentissage collaboratif)"
+          />
+        </div>
+
+        <!-- Description -->
+        <div class="form-group">
+          <label for="description">Description détaillée *</label>
+          <textarea
+            id="description"
+            name="description"
+            rows="6"
+            required
+            placeholder="Décrivez votre idée en détails (objectifs, fonctionnalités envisagées, public cible...)"
+          ></textarea>
+        </div>
+
+        <!-- Domaine -->
+        <div class="form-group">
+          <label for="domaine">Domaine principal *</label>
+          <select id="domaine" name="domaine" required>
+            <option value="">Sélectionnez un domaine</option>
+            <option value="WEB">Développement Web</option>
+            <option value="MOBILE">Applications Mobiles</option>
+            <option value="IA">Intelligence Artificielle</option>
+            <option value="DATA">Data Science</option>
+            <option value="IOT">IoT/Objets Connectés</option>
+            <option value="BLOCKCHAIN">Blockchain</option>
+            <option value="GAME">Développement de Jeux</option>
+            <option value="OTHER">Autre</option>
+          </select>
+        </div>
+
+        <!-- Niveau -->
+        <div class="form-group">
+          <label>Niveau de difficulté *</label>
+          <div class="radio-group">
+            <label class="radio-option">
+              <input type="radio" name="niveau" value="DEBUTANT" required />
+              <span class="radio-custom"></span>
+              <div class="radio-content">
+                <span class="radio-title">Débutant</span>
+                <span class="radio-description"
+                  >Idée accessible aux nouveaux développeurs</span
+                >
+              </div>
+            </label>
+
+            <label class="radio-option">
+              <input type="radio" name="niveau" value="INTERMEDIAIRE" />
+              <span class="radio-custom"></span>
+              <div class="radio-content">
+                <span class="radio-title">Intermédiaire</span>
+                <span class="radio-description"
+                  >Nécessite des compétences techniques moyennes</span
+                >
+              </div>
+            </label>
+
+            <label class="radio-option">
+              <input type="radio" name="niveau" value="AVANCE" />
+              <span class="radio-custom"></span>
+              <div class="radio-content">
+                <span class="radio-title">Avancé</span>
+                <span class="radio-description"
+                  >Pour développeurs expérimentés</span
+                >
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <!-- Leguer -->
+        <div class="form-group switch-group">
+          <label for="leguer">Léguer cette idée à la communauté</label>
+          <label class="switch">
+            <input type="checkbox" id="leguer" name="leguer" />
+            <span class="slider round"></span>
+          </label>
+          <p class="hint">
+            Si activé, l'idée pourra être reprise par d'autres membres sans
+            votre implication directe
+          </p>
+        </div>
+
+        <!-- Pièce jointe -->
+        <div class="form-group">
+          <label for="fichierJoint">Fichier joint (optionnel)</label>
+          <div class="file-upload">
+            <input
+              type="file"
+              id="fichierJoint"
+              name="fichierJoint"
+              accept=".pdf,.doc,.docx,.jpg,.png"
+            />
+            <label for="fichierJoint" class="file-upload-label">
+              <i class="fas fa-cloud-upload-alt"></i>
+              <span>Choisir un fichier</span>
+            </label>
+            <span class="file-name">Aucun fichier sélectionné</span>
+          </div>
+          <p class="hint">Formats acceptés : PDF, Word, JPG, PNG (max 5MB)</p>
+        </div>
+
+        <!-- Actions -->
+        <div class="form-actions">
+          <button type="button" class="btn-outline" id="btnAnnuler">
+            <i class="fas fa-times"></i> Annuler
+          </button>
+          <button type="submit" class="btn-primary">
+            <i class="fas fa-paper-plane"></i> Soumettre l'idée
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <script>
+      // Gestion de l'affichage du nom du fichier
+      document
+        .getElementById("fichierJoint")
+        .addEventListener("change", function (e) {
+          const fileName = e.target.files[0]
+            ? e.target.files[0].name
+            : "Aucun fichier sélectionné";
+          document.querySelector(".file-name").textContent = fileName;
+        });
+    </script>
+  </body>
+</html>

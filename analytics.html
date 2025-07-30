@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Analytics | CollabDev</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="../assets/css/index.css" />
+    <link rel="stylesheet" href="../assets/css/components.css" />
+    <link rel="stylesheet" href="../assets/css/analytics.css" />
+    <!-- Chart.js pour les visualisations -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="glass-header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-code-branch"></i>
+                    <span>CollabDev</span>
+                </a>
+
+                <div class="search-container">
+                    <div class="search-bar">
+                        <input type="text" placeholder="Rechercher projets, membres, fonctionnalités..." id="globalSearch" />
+                        <button class="search-btn">
+                            <i class="fas fa-search"></i>
+                        </button>
+                        <div class="search-results glass-panel"></div>
+                    </div>
+                </div>
+
+                <div class="header-actions">
+                    <button class="notification-btn">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">3</span>
+                    </button>
+                    <button class="theme-toggle" id="themeToggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <div class="user-avatar" id="userMenuBtn">
+                        <img src="assets/images/avatars/user1.jpg" alt="Profil" />
+                        <div class="user-status online"></div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="dashboard-layout">
+        <!-- Sidebar -->
+        <aside class="glass-sidebar">
+            <div class="user-profile">
+                <div class="avatar-container">
+                    <img src="assets/images/avatars/user1.jpg" alt="Profil" class="profile-avatar" />
+                    <div class="level-badge">24</div>
+                </div>
+                <h3>Alex Dupont</h3>
+                <p>Développeur Fullstack</p>
+                <div class="xp-bar">
+                    <div class="xp-progress" style="width: 65%"></div>
+                    <span>2,450/3,800 XP</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="dashboard.html">
+                    <i class="fas fa-home"></i>
+                    <span>Tableau de bord</span>
+                </a>
+                <a href="projects.html">
+                    <i class="fas fa-project-diagram"></i>
+                    <span>Mes projets</span>
+                </a>
+                <a href="contributions.html">
+                    <i class="fas fa-code-merge"></i>
+                    <span>Contributions</span>
+                    <span class="nav-badge">5</span>
+                </a>
+                <a href="messages.html">
+                    <i class="fas fa-envelope"></i>
+                    <span>Messages</span>
+                    <span class="nav-badge">3</span>
+                </a>
+                <a href="rewards.html">
+                    <i class="fas fa-trophy"></i>
+                    <span>Récompenses</span>
+                </a>
+                <a href="analytics.html" class="active">
+                    <i class="fas fa-chart-network"></i>
+                    <span>Analytics</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <button class="btn-create">
+                    <i class="fas fa-plus"></i>
+                    Nouveau projet
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-content">
+            <div class="page-header">
+                <h1>
+                    <i class="fas fa-chart-network"></i>
+                    Analytics
+                </h1>
+                <p>Statistiques et analyses de votre activité</p>
+            </div>
+
+            <!-- Filtres période -->
+            <div class="analytics-filters glass-panel">
+                <div class="time-filters">
+                    <button class="time-filter active">7 jours</button>
+                    <button class="time-filter">30 jours</button>
+                    <button class="time-filter">90 jours</button>
+                    <button class="time-filter">Personnalisée</button>
+                </div>
+                <div class="date-range">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>15 Mai - 15 Juin 2023</span>
+                </div>
+            </div>
+
+            <!-- Stats Cards -->
+            <div class="analytics-stats-grid">
+                <div class="stats-card">
+                    <div class="stats-icon">
+                        <i class="fas fa-code-commit"></i>
+                    </div>
+                    <div class="stats-info">
+                        <h3>24</h3>
+                        <p>Contributions</p>
+                        <span class="stats-change positive">
+                            <i class="fas fa-arrow-up"></i>
+                            12% vs période précédente
+                        </span>
+                    </div>
+                </div>
+
+                <div class="stats-card">
+                    <div class="stats-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="stats-info">
+                        <h3>56h</h3>
+                        <p>Temps investi</p>
+                        <span class="stats-change positive">
+                            <i class="fas fa-arrow-up"></i>
+                            8% vs période précédente
+                        </span>
+                    </div>
+                </div>
+
+                <div class="stats-card">
+                    <div class="stats-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <div class="stats-info">
+                        <h3>5</h3>
+                        <p>Projets actifs</p>
+                        <span class="stats-change neutral">
+                            <i class="fas fa-equals"></i>
+                            Stable
+                        </span>
+                    </div>
+                </div>
+
+                <div class="stats-card">
+                    <div class="fas fa-users"></i>
+                    </div>
+                    <div class="stats-info">
+                        <h3>8</h3>
+                        <p>Collaborateurs</p>
+                        <span class="stats-change positive">
+                            <i class="fas fa-arrow-up"></i>
+                            2 nouveaux
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Graphiques principaux -->
+            <div class="analytics-charts-grid">
+                <!-- Activité hebdomadaire -->
+                <div class="chart-card glass-panel">
+                    <div class="chart-header">
+                        <h3>
+                            <i class="fas fa-chart-line"></i>
+                            Activité Hebdomadaire
+                        </h3>
+                        <div class="chart-legend">
+                            <div class="legend-item">
+                                <span class="color-line commits"></span>
+                                <span>Commits</span>
+                            </div>
+                            <div class="legend-item">
+                                <span class="color-line prs"></span>
+                                <span>PRs</span>
+                            </div>
+                            <div class="legend-item">
+                                <span class="color-line reviews"></span>
+                                <span>Reviews</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="activityChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Répartition par projet -->
+                <div class="chart-card glass-panel">
+                    <div class="chart-header">
+                        <h3>
+                            <i class="fas fa-chart-pie"></i>
+                            Répartition par Projet
+                        </h3>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="projectsChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tableau activité récente -->
+            <div class="activity-table glass-panel">
+                <div class="table-header">
+                    <h3>
+                        <i class="fas fa-table"></i>
+                        Activité Récente
+                    </h3>
+                    <button class="btn-secondary">
+                        <i class="fas fa-download"></i>
+                        Exporter
+                    </button>
+                </div>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Projet</th>
+                                <th>Type</th>
+                                <th>Activité</th>
+                                <th>Temps</th>
+                                <th>XP</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>15/06/2023</td>
+                                <td>
+                                    <div class="project-badge">
+                                        <i class="fas fa-project-diagram"></i>
+                                        TaskFlow
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="activity-badge dev">
+                                        <i class="fas fa-code"></i>
+                                        Dev
+                                    </span>
+                                </td>
+                                <td>Implémentation authentification</td>
+                                <td>3h25</td>
+                                <td class="positive">+120</td>
+                            </tr>
+                            <tr>
+                                <td>14/06/2023</td>
+                                <td>
+                                    <div class="project-badge">
+                                        <i class="fas fa-project-diagram"></i>
+                                        Appli Recettes
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="activity-badge review">
+                                        <i class="fas fa-eye"></i>
+                                        Review
+                                    </span>
+                                </td>
+                                <td>Revue de code PR #42</td>
+                                <td>1h10</td>
+                                <td class="positive">+40</td>
+                            </tr>
+                            <tr>
+                                <td>12/06/2023</td>
+                                <td>
+                                    <div class="project-badge">
+                                        <i class="fas fa-project-diagram"></i>
+                                        TaskFlow
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="activity-badge bug">
+                                        <i class="fas fa-bug"></i>
+                                        Bugfix
+                                    </span>
+                                </td>
+                                <td>Correction bug page login mobile</td>
+                                <td>2h15</td>
+                                <td class="positive">+80</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Habitudes de travail -->
+            <div class="habits-section glass-panel">
+                <div class="section-header">
+                    <h3>
+                        <i class="fas fa-clock"></i>
+                        Habitudes de Travail
+                    </h3>
+                    <div class="time-filters">
+                        <button class="time-filter active">Matin</button>
+                        <button class="time-filter">Après-midi</button>
+                        <button class="time-filter">Soir</button>
+                        <button class="time-filter">Nuit</button>
+                    </div>
+                </div>
+                <div class="habits-chart">
+                    <canvas id="habitsChart"></canvas>
+                </div>
+                <div class="habits-stats">
+                    <div class="habit-stat">
+                        <div class="stat-value">72%</div>
+                        <div class="stat-label">Activité le matin</div>
+                    </div>
+                    <div class="habit-stat">
+                        <div class="stat-value">3.2h</div>
+                        <div class="stat-label">Session moyenne</div>
+                    </div>
+                    <div class="habit-stat">
+                        <div class="stat-value">Lun</div>
+                        <div class="stat-label">Jour le plus productif</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/theme.js"></script>
+    <script src="assets/js/analytics.js"></script>
+</body>
+</html>

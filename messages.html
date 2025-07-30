@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Messages | CollabDev</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../assets/css/index.css" />
+    <link rel="stylesheet" href="../assets/css/components.css" />
+    <link rel="stylesheet" href="../assets/css/messages.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="glass-header">
+      <div class="container">
+        <nav class="navbar">
+          <a href="index.html" class="logo">
+            <i class="fas fa-code-branch"></i>
+            <span>CollabDev</span>
+          </a>
+
+          <div class="search-container">
+            <div class="search-bar">
+              <input
+                type="text"
+                placeholder="Rechercher projets, membres, fonctionnalités..."
+                id="globalSearch"
+              />
+              <button class="search-btn">
+                <i class="fas fa-search"></i>
+              </button>
+              <div class="search-results glass-panel"></div>
+            </div>
+          </div>
+
+          <div class="header-actions">
+            <button class="notification-btn">
+              <i class="fas fa-bell"></i>
+              <span class="notification-badge">3</span>
+            </button>
+            <button class="theme-toggle" id="themeToggle">
+              <i class="fas fa-moon"></i>
+            </button>
+            <div class="user-avatar" id="userMenuBtn">
+              <img src="assets/images/avatars/user1.jpg" alt="Profil" />
+              <div class="user-status online"></div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="dashboard-layout">
+      <!-- Sidebar -->
+      <aside class="glass-sidebar">
+        <div class="user-profile">
+          <div class="avatar-container">
+            <img
+              src="assets/images/avatars/user1.jpg"
+              alt="Profil"
+              class="profile-avatar"
+            />
+            <div class="level-badge">24</div>
+          </div>
+          <h3>Alex Dupont</h3>
+          <p>Développeur Fullstack</p>
+          <div class="xp-bar">
+            <div class="xp-progress" style="width: 65%"></div>
+            <span>2,450/3,800 XP</span>
+          </div>
+        </div>
+
+        <nav class="sidebar-nav">
+          <a href="dashboard.html">
+            <i class="fas fa-home"></i>
+            <span>Tableau de bord</span>
+          </a>
+          <a href="projects.html">
+            <i class="fas fa-project-diagram"></i>
+            <span>Mes projets</span>
+          </a>
+          <a href="contributions.html">
+            <i class="fas fa-code-merge"></i>
+            <span>Contributions</span>
+            <span class="nav-badge">5</span>
+          </a>
+          <a href="messages.html" class="active">
+            <i class="fas fa-envelope"></i>
+            <span>Messages</span>
+            <span class="nav-badge">3</span>
+          </a>
+          <a href="rewards.html">
+            <i class="fas fa-trophy"></i>
+            <span>Récompenses</span>
+          </a>
+          <a href="analytics.html">
+            <i class="fas fa-chart-network"></i>
+            <span>Analytics</span>
+          </a>
+        </nav>
+
+        <div class="sidebar-footer">
+          <button class="btn-create">
+            <i class="fas fa-plus"></i>
+            Nouveau projet
+          </button>
+        </div>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="dashboard-content">
+        <div class="messages-layout">
+          <!-- Liste des conversations -->
+          <div class="conversations-list glass-panel">
+            <div class="conversations-header">
+              <h2>
+                <i class="fas fa-envelope"></i>
+                Messages
+              </h2>
+              <button class="btn-primary btn-sm">
+                <i class="fas fa-plus"></i>
+                Nouveau
+              </button>
+            </div>
+
+            <div class="conversations-search">
+              <div class="search-input">
+                <i class="fas fa-search"></i>
+                <input
+                  type="text"
+                  placeholder="Rechercher une conversation..."
+                />
+              </div>
+            </div>
+
+            <div class="conversations-filter">
+              <button class="filter-btn active">Tous</button>
+              <button class="filter-btn">Non lus</button>
+              <button class="filter-btn">Importants</button>
+            </div>
+
+            <div class="conversations-container">
+              <!-- Conversation 1 -->
+              <div class="conversation-item active">
+                <div class="conversation-avatar">
+                  <img src="assets/images/avatars/user2.jpg" alt="Marie L." />
+                  <div class="user-status online"></div>
+                </div>
+                <div class="conversation-content">
+                  <div class="conversation-header">
+                    <h4>Marie L.</h4>
+                    <span class="conversation-time">10:45</span>
+                  </div>
+                  <p class="conversation-preview">
+                    Salut Alex, j'ai revu ta PR pour TaskFlow...
+                  </p>
+                  <div class="conversation-meta">
+                    <span class="conversation-project">
+                      <i class="fas fa-project-diagram"></i>
+                      TaskFlow
+                    </span>
+                    <span class="unread-badge">2</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Conversation 2 -->
+              <div class="conversation-item">
+                <div class="conversation-avatar">
+                  <img src="assets/images/avatars/user3.jpg" alt="Pierre D." />
+                  <div class="user-status idle"></div>
+                </div>
+                <div class="conversation-content">
+                  <div class="conversation-header">
+                    <h4>Pierre D.</h4>
+                    <span class="conversation-time">Hier</span>
+                  </div>
+                  <p class="conversation-preview">
+                    Félicitations pour ta contribution !
+                  </p>
+                  <div class="conversation-meta">
+                    <span class="conversation-project">
+                      <i class="fas fa-project-diagram"></i>
+                      Appli Recettes
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Conversation 3 -->
+              <div class="conversation-item important">
+                <div class="conversation-avatar">
+                  <img
+                    src="assets/images/avatars/user4.jpg"
+                    alt="Équipe CollabDev"
+                  />
+                  <div class="user-status"></div>
+                </div>
+                <div class="conversation-content">
+                  <div class="conversation-header">
+                    <h4>Équipe CollabDev</h4>
+                    <span class="conversation-time">15/06</span>
+                  </div>
+                  <p class="conversation-preview">
+                    Nouvelle mise à jour de la plateforme...
+                  </p>
+                  <div class="conversation-meta">
+                    <span class="conversation-project">
+                      <i class="fas fa-info-circle"></i>
+                      Annonce
+                    </span>
+                    <span class="important-badge">
+                      <i class="fas fa-exclamation"></i>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Conversation active -->
+          <div class="conversation-view glass-panel">
+            <div class="conversation-view-header">
+              <div class="conversation-info">
+                <div class="conversation-avatar">
+                  <img src="assets/images/avatars/user2.jpg" alt="Marie L." />
+                  <div class="user-status online"></div>
+                </div>
+                <div class="conversation-details">
+                  <h3>Marie L.</h3>
+                  <p>Développeuse Frontend • En ligne</p>
+                </div>
+              </div>
+              <div class="conversation-actions">
+                <button class="btn-icon">
+                  <i class="fas fa-phone-alt"></i>
+                </button>
+                <button class="btn-icon">
+                  <i class="fas fa-video"></i>
+                </button>
+                <button class="btn-icon">
+                  <i class="fas fa-ellipsis-v"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="conversation-messages">
+              <!-- Message 1 -->
+              <div class="message received">
+                <div class="message-content">
+                  <p>
+                    Salut Alex, j'ai revu ta PR pour TaskFlow. Globalement c'est
+                    très bien, j'ai juste quelques suggestions d'amélioration.
+                  </p>
+                  <div class="message-attachment">
+                    <div class="attachment-file">
+                      <i class="fas fa-file-code"></i>
+                      <span>review_comments.md</span>
+                      <span class="file-size">24 Ko</span>
+                    </div>
+                  </div>
+                  <span class="message-time">10:45</span>
+                </div>
+              </div>
+
+              <!-- Message 2 -->
+              <div class="message sent">
+                <div class="message-content">
+                  <p>
+                    Merci Marie pour la review ! Je regarde tes commentaires et
+                    je te fais un retour rapidement.
+                  </p>
+                  <span class="message-time">10:52</span>
+                </div>
+              </div>
+
+              <!-- Message 3 -->
+              <div class="message received">
+                <div class="message-content">
+                  <p>
+                    Super ! Aussi, j'ai remarqué un petit bug sur la page de
+                    login quand on est sur mobile. Tu pourrais jeter un œil ?
+                  </p>
+                  <div class="message-attachment">
+                    <div class="attachment-image">
+                      <img
+                        src="assets/images/screenshots/login-bug.jpg"
+                        alt="Bug screenshot"
+                      />
+                    </div>
+                  </div>
+                  <span class="message-time">10:54</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="conversation-composer">
+              <div class="composer-tools">
+                <button class="btn-icon">
+                  <i class="fas fa-paperclip"></i>
+                </button>
+                <button class="btn-icon">
+                  <i class="fas fa-code"></i>
+                </button>
+                <button class="btn-icon">
+                  <i class="fas fa-smile"></i>
+                </button>
+              </div>
+              <div class="composer-input">
+                <textarea
+                  placeholder="Écrivez votre message..."
+                  rows="1"
+                ></textarea>
+              </div>
+              <button class="btn-primary btn-send">
+                <i class="fas fa-paper-plane"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Empty State -->
+          <div class="empty-conversation glass-panel">
+            <div class="empty-icon">
+              <i class="fas fa-comments"></i>
+            </div>
+            <h3>Aucune conversation sélectionnée</h3>
+            <p>
+              Sélectionnez une conversation ou démarrez une nouvelle discussion
+            </p>
+            <button class="btn-primary">
+              <i class="fas fa-plus"></i>
+              Nouveau message
+            </button>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/theme.js"></script>
+    <script src="assets/js/messages.js"></script>
+  </body>
+</html>

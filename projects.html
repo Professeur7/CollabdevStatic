@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mes Projets | CollabDev</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/index.css">
+    <link rel="stylesheet" href="../assets/css/components.css">
+    <link rel="stylesheet" href="../assets/css/projects.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="glass-header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-code-branch"></i>
+                    <span>CollabDev</span>
+                </a>
+                
+                <div class="search-container">
+                    <div class="search-bar">
+                        <input type="text" placeholder="Rechercher mes projets..." id="projectSearch">
+                        <button class="search-btn">
+                            <i class="fas fa-search"></i>
+                        </button>
+                        <div class="search-results glass-panel"></div>
+                    </div>
+                </div>
+
+                <div class="header-actions">
+                    <button class="notification-btn">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">2</span>
+                    </button>
+                    <button class="theme-toggle" id="themeToggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <div class="user-avatar" id="userMenuBtn">
+                        <img src="assets/images/avatars/user1.jpg" alt="Profil">
+                        <div class="user-status online"></div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="dashboard-layout">
+        <!-- Sidebar -->
+        <aside class="glass-sidebar">
+            <div class="user-profile">
+                <div class="avatar-container">
+                    <img src="assets/images/avatars/user1.jpg" alt="Profil" class="profile-avatar">
+                    <div class="level-badge">24</div>
+                </div>
+                <h3>Alex Dupont</h3>
+                <p>Développeur Fullstack</p>
+                <div class="xp-bar">
+                    <div class="xp-progress" style="width: 65%"></div>
+                    <span>2,450/3,800 XP</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="dashboard.html">
+                    <i class="fas fa-home"></i>
+                    <span>Tableau de bord</span>
+                </a>
+                <a href="projects.html" class="active">
+                    <i class="fas fa-project-diagram"></i>
+                    <span>Mes projets</span>
+                    <span class="nav-badge">8</span>
+                </a>
+                <a href="contributions.html">
+                    <i class="fas fa-code-merge"></i>
+                    <span>Contributions</span>
+                    <span class="nav-badge">5</span>
+                </a>
+                <a href="messages.html">
+                    <i class="fas fa-envelope"></i>
+                    <span>Messages</span>
+                    <span class="nav-badge">3</span>
+                </a>
+                <a href="rewards.html">
+                    <i class="fas fa-trophy"></i>
+                    <span>Récompenses</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <button class="btn-create" id="newProjectBtn">
+                    <i class="fas fa-plus"></i>
+                    Nouveau projet
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-content">
+            <div class="page-header">
+                <h1>
+                    <i class="fas fa-project-diagram"></i>
+                    Mes Projets
+                </h1>
+                <div class="page-actions">
+                    <div class="view-toggle">
+                        <button class="btn-icon active" data-view="grid">
+                            <i class="fas fa-th-large"></i>
+                        </button>
+                        <button class="btn-icon" data-view="list">
+                            <i class="fas fa-list"></i>
+                        </button>
+                    </div>
+                    <div class="filter-dropdown">
+                        <button class="btn-outline" id="filterDropdown">
+                            <i class="fas fa-filter"></i>
+                            Filtrer
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="dropdown-menu glass-panel">
+                            <div class="filter-group">
+                                <h4>Statut</h4>
+                                <label class="filter-checkbox">
+                                    <input type="checkbox" checked>
+                                    <span>En cours</span>
+                                </label>
+                                <label class="filter-checkbox">
+                                    <input type="checkbox" checked>
+                                    <span>En attente</span>
+                                </label>
+                                <label class="filter-checkbox">
+                                    <input type="checkbox">
+                                    <span>Terminé</span>
+                                </label>
+                            </div>
+                            <div class="filter-group">
+                                <h4>Rôle</h4>
+                                <label class="filter-checkbox">
+                                    <input type="checkbox" checked>
+                                    <span>Gestionnaire</span>
+                                </label>
+                                <label class="filter-checkbox">
+                                    <input type="checkbox" checked>
+                                    <span>Contributeur</span>
+                                </label>
+                            </div>
+                            <div class="filter-actions">
+                                <button class="btn-link">Réinitialiser</button>
+                                <button class="btn-primary">Appliquer</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Projects Grid View -->
+            <div class="projects-container grid-view" id="projectsContainer">
+                <!-- Projet 1 -->
+                <div class="project-card glass-panel">
+                    <div class="project-header">
+                        <div class="project-badge" style="background-color: #6366f1;">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <div class="project-meta">
+                            <span class="project-status active">Actif</span>
+                            <span class="project-role manager">Gestionnaire</span>
+                        </div>
+                        <div class="project-actions">
+                            <button class="btn-icon">
+                                <i class="fas fa-ellipsis-v"></i>
+                            </button>
+                            <div class="dropdown-menu">
+                                <a href="#"><i class="fas fa-edit"></i> Modifier</a>
+                                <a href="#"><i class="fas fa-users"></i> Membres</a>
+                                <a href="#"><i class="fas fa-archive"></i> Archiver</a>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="project-title">Appli Recettes</h3>
+                    <p class="project-description">
+                        Application mobile de partage de recettes avec système de recommandation IA
+                    </p>
+                    <div class="project-progress">
+                        <div class="progress-info">
+                            <span>Progression</span>
+                            <span>45%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 45%"></div>
+                        </div>
+                    </div>
+                    <div class="project-footer">
+                        <div class="project-stats">
+                            <div class="stat-item">
+                                <i class="fas fa-code-branch"></i>
+                                <span>12 PR</span>
+                            </div>
+                            <div class="stat-item">
+                                <i class="fas fa-tasks"></i>
+                                <span>24/58</span>
+                            </div>
+                            <div class="stat-item">
+                                <i class="fas fa-users"></i>
+                                <span>6</span>
+                            </div>
+                        </div>
+                        <a href="../projetdetail.html" class="btn-link">
+                            Voir le projet
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Projet 2 -->
+                <div class="project-card glass-panel">
+                    <div class="project-header">
+                        <div class="project-badge" style="background-color: #10b981;">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                        <div class="project-meta">
+                            <span class="project-status active">Actif</span>
+                            <span class="project-role contributor">Contributeur</span>
+                        </div>
+                        <div class="project-actions">
+                            <button class="btn-icon">
+                                <i class="fas fa-ellipsis-v"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <h3 class="project-title">TaskFlow</h3>
+                    <p class="project-description">
+                        Plateforme collaborative de gestion de tâches avec tableaux Kanban
+                    </p>
+                    <div class="project-progress">
+                        <div class="progress-info">
+                            <span>Progression</span>
+                            <span>78%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 78%"></div>
+                        </div>
+                    </div>
+                    <div class="project-footer">
+                        <div class="project-stats">
+                            <div class="stat-item">
+                                <i class="fas fa-code-branch"></i>
+                                <span>8 PR</span>
+                            </div>
+                            <div class="stat-item">
+                                <i class="fas fa-tasks"></i>
+                                <span>42/50</span>
+                            </div>
+                            <div class="stat-item">
+                                <i class="fas fa-users"></i>
+                                <span>4</span>
+                            </div>
+                        </div>
+                        <a href="../projetdetail.html" class="btn-link">
+                            Voir le projet
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Projet 3 -->
+                <div class="project-card glass-panel">
+                    <div class="project-header">
+                        <div class="project-badge" style="background-color: #3b82f6;">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="project-meta">
+                            <span class="project-status pending">En attente</span>
+                            <span class="project-role manager">Gestionnaire</span>
+                        </div>
+                        <div class="project-actions">
+                            <button class="btn-icon">
+                                <i class="fas fa-ellipsis-v"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <h3 class="project-title">Data Analytics</h3>
+                    <p class="project-description">
+                        Tableau de bord analytique avec visualisation de données en temps réel
+                    </p>
+                    <div class="project-progress">
+                        <div class="progress-info">
+                            <span>Progression</span>
+                            <span>15%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 15%"></div>
+                        </div>
+                    </div>
+                    <div class="project-footer">
+                        <div class="project-stats">
+                            <div class="stat-item">
+                                <i class="fas fa-code-branch"></i>
+                                <span>3 PR</span>
+                            </div>
+                            <div class="stat-item">
+                                <i class="fas fa-tasks"></i>
+                                <span>7/45</span>
+                            </div>
+                            <div class="stat-item">
+                                <i class="fas fa-users"></i>
+                                <span>3</span>
+                            </div>
+                        </div>
+                        <a href="../projetdetail.html" class="btn-link">
+                            Voir le projet
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Projet 4 -->
+                <div class="project-card glass-panel">
+                    <div class="project-header">
+                        <div class="project-badge" style="background-color: #f59e0b;">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <div class="project-meta">
+                            <span class="project-status completed">Terminé</span>
+                            <span class="project-role contributor">Contributeur</span>
+                        </div>
+                        <div class="project-actions">
+                            <button class="btn-icon">
+                                <i class="fas fa-ellipsis-v"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <h3 class="project-title">EcoShop</h3>
+                    <p class="project-description">
+                        Plateforme e-commerce écologique avec système de récompenses
+                    </p>
+                    <div class="project-progress">
+                        <div class="progress-info">
+                            <span>Progression</span>
+                            <span>100%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 100%"></div>
+                        </div>
+                    </div>
+                    <div class="project-footer">
+                        <div class="project-stats">
+                            <div class="stat-item">
+                                <i class="fas fa-code-branch"></i>
+                                <span>24 PR</span>
+                            </div>
+                            <div class="stat-item">
+                                <i class="fas fa-tasks"></i>
+                                <span>68/68</span>
+                            </div>
+                            <div class="stat-item">
+                                <i class="fas fa-users"></i>
+                                <span>5</span>
+                            </div>
+                        </div>
+                        <a href="../projetdetail.html" class="btn-link">
+                            Voir le projet
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination">
+                <button class="btn-icon disabled">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="page-number active">1</button>
+                <button class="page-number">2</button>
+                <button class="page-number">3</button>
+                <span class="page-ellipsis">...</span>
+                <button class="page-number">8</button>
+                <button class="btn-icon">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </main>
+    </div>
+
+    <!-- New Project Modal -->
+    <div class="modal glass-modal" id="newProjectModal">
+        <div class="modal-content">
+            <button class="close-modal">
+                <i class="fas fa-times"></i>
+            </button>
+            <h2>Créer un nouveau projet</h2>
+            <form id="newProjectForm">
+                <div class="form-group">
+                    <label for="projectName">Nom du projet</label>
+                    <input type="text" id="projectName" placeholder="Donnez un nom à votre projet" required>
+                </div>
+                <div class="form-group">
+                    <label for="projectDescription">Description</label>
+                    <textarea id="projectDescription" placeholder="Décrivez brièvement votre projet" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Type de projet</label>
+                    <div class="project-type-selector">
+                        <input type="radio" name="projectType" id="typeTechnical" value="technical" checked>
+                        <label for="typeTechnical">
+                            <i class="fas fa-code"></i>
+                            <span>Technique</span>
+                        </label>
+                        <input type="radio" name="projectType" id="typeDesign" value="design">
+                        <label for="typeDesign">
+                            <i class="fas fa-paint-brush"></i>
+                            <span>Design</span>
+                        </label>
+                        <input type="radio" name="projectType" id="typeOther" value="other">
+                        <label for="typeOther">
+                            <i class="fas fa-project-diagram"></i>
+                            <span>Autre</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="projectCategory">Catégorie</label>
+                    <select id="projectCategory">
+                        <option value="">Sélectionner une catégorie</option>
+                        <option value="web">Développement Web</option>
+                        <option value="mobile">Mobile</option>
+                        <option value="ai">IA/Data Science</option>
+                        <option value="design">UI/UX Design</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Visibilité</label>
+                    <div class="visibility-selector">
+                        <input type="radio" name="visibility" id="visibilityPublic" value="public" checked>
+                        <label for="visibilityPublic">
+                            <i class="fas fa-globe"></i>
+                            <span>Public</span>
+                        </input>
+                        <input type="radio" name="visibility" id="visibilityPrivate" value="private">
+                        <label for="visibilityPrivate">
+                            <i class="fas fa-lock"></i>
+                            <span>Privé</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn-outline close-modal">Annuler</button>
+                    <button type="submit" class="btn-primary">
+                        <i class="fas fa-plus"></i>
+                        Créer le projet
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/theme.js"></script>
+    <script src="assets/js/projects.js"></script>
+</body>
+</html>

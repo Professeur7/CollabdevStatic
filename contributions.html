@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mes Contributions | CollabDev</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../assets/css/index.css" />
+    <link rel="stylesheet" href="../assets/css/components.css" />
+    <link rel="stylesheet" href="../assets/css/contributions.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="glass-header">
+      <div class="container">
+        <nav class="navbar">
+          <a href="index.html" class="logo">
+            <i class="fas fa-code-branch"></i>
+            <span>CollabDev</span>
+          </a>
+
+          <div class="search-container">
+            <div class="search-bar">
+              <input
+                type="text"
+                placeholder="Rechercher mes contributions..."
+                id="contributionSearch"
+              />
+              <button class="search-btn">
+                <i class="fas fa-search"></i>
+              </button>
+              <div class="search-results glass-panel"></div>
+            </div>
+          </div>
+
+          <div class="header-actions">
+            <button class="notification-btn">
+              <i class="fas fa-bell"></i>
+              <span class="notification-badge">2</span>
+            </button>
+            <button class="theme-toggle" id="themeToggle">
+              <i class="fas fa-moon"></i>
+            </button>
+            <div class="user-avatar" id="userMenuBtn">
+              <img src="assets/images/avatars/user1.jpg" alt="Profil" />
+              <div class="user-status online"></div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="dashboard-layout">
+      <!-- Sidebar -->
+      <aside class="glass-sidebar">
+        <div class="user-profile">
+          <div class="avatar-container">
+            <img
+              src="assets/images/avatars/user1.jpg"
+              alt="Profil"
+              class="profile-avatar"
+            />
+            <div class="level-badge">24</div>
+          </div>
+          <h3>Alex Dupont</h3>
+          <p>Développeur Fullstack</p>
+          <div class="xp-bar">
+            <div class="xp-progress" style="width: 65%"></div>
+            <span>2,450/3,800 XP</span>
+          </div>
+        </div>
+
+        <nav class="sidebar-nav">
+          <a href="dashboard.html">
+            <i class="fas fa-home"></i>
+            <span>Tableau de bord</span>
+          </a>
+          <a href="projects.html">
+            <i class="fas fa-project-diagram"></i>
+            <span>Mes projets</span>
+            <span class="nav-badge">8</span>
+          </a>
+          <a href="contributions.html" class="active">
+            <i class="fas fa-code-merge"></i>
+            <span>Contributions</span>
+            <span class="nav-badge">5</span>
+          </a>
+          <a href="messages.html">
+            <i class="fas fa-envelope"></i>
+            <span>Messages</span>
+            <span class="nav-badge">3</span>
+          </a>
+          <a href="rewards.html">
+            <i class="fas fa-trophy"></i>
+            <span>Récompenses</span>
+          </a>
+        </nav>
+
+        <div class="sidebar-footer">
+          <button class="btn-create" id="newContributionBtn">
+            <i class="fas fa-plus"></i>
+            Nouvelle contribution
+          </button>
+        </div>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="dashboard-content">
+        <div class="page-header">
+          <h1>
+            <i class="fas fa-code-merge"></i>
+            Mes Contributions
+          </h1>
+          <div class="contribution-filters">
+            <div class="filter-tabs">
+              <button class="filter-tab active" data-status="all">
+                Toutes
+              </button>
+              <button class="filter-tab" data-status="pending">
+                En attente
+              </button>
+              <button class="filter-tab" data-status="approved">
+                Approuvées
+              </button>
+              <button class="filter-tab" data-status="rejected">
+                Rejetées
+              </button>
+            </div>
+            <div class="sort-dropdown">
+              <button class="btn-outline" id="sortDropdown">
+                <i class="fas fa-sort"></i>
+                Trier par
+                <i class="fas fa-chevron-down"></i>
+              </button>
+              <div class="dropdown-menu glass-panel">
+                <a href="#" class="sort-option active" data-sort="recent">
+                  <i class="fas fa-clock"></i>
+                  Plus récentes
+                </a>
+                <a href="#" class="sort-option" data-sort="oldest">
+                  <i class="fas fa-history"></i>
+                  Plus anciennes
+                </a>
+                <a href="#" class="sort-option" data-sort="xp">
+                  <i class="fas fa-bolt"></i>
+                  XP gagnée
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contributions List -->
+        <div class="contributions-container">
+          <!-- Contribution 1 -->
+          <div class="contribution-card glass-panel" data-status="approved">
+            <div class="contribution-header">
+              <div class="contribution-badge approved">
+                <i class="fas fa-check"></i>
+              </div>
+              <div class="contribution-meta">
+                <h3>Intégration GitHub</h3>
+                <div class="contribution-project">
+                  <i class="fas fa-project-diagram"></i>
+                  <span>TaskFlow</span>
+                </div>
+              </div>
+              <div class="contribution-date">
+                <i class="fas fa-calendar"></i>
+                <span>15 Juil. 2023</span>
+              </div>
+            </div>
+            <p class="contribution-description">
+              Implémentation de l'authentification OAuth avec GitHub pour
+              synchroniser les issues et pull requests.
+            </p>
+            <div class="contribution-details">
+              <div class="detail-item">
+                <span class="detail-label">Statut:</span>
+                <span class="detail-value badge approved">Approuvée</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">XP gagnée:</span>
+                <span class="detail-value">
+                  <i class="fas fa-bolt"></i>
+                  150 XP
+                </span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Points:</span>
+                <span class="detail-value">
+                  <i class="fas fa-coins"></i>
+                  50 Points
+                </span>
+              </div>
+            </div>
+            <div class="contribution-footer">
+              <a href="contribution-detail.html" class="btn-link">
+                Voir les détails
+                <i class="fas fa-arrow-right"></i>
+              </a>
+              <div class="contribution-actions">
+                <button class="btn-icon">
+                  <i class="fas fa-share"></i>
+                </button>
+                <button class="btn-icon">
+                  <i class="fas fa-ellipsis-v"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contribution 2 -->
+          <div class="contribution-card glass-panel" data-status="pending">
+            <div class="contribution-header">
+              <div class="contribution-badge pending">
+                <i class="fas fa-clock"></i>
+              </div>
+              <div class="contribution-meta">
+                <h3>Design des recettes</h3>
+                <div class="contribution-project">
+                  <i class="fas fa-project-diagram"></i>
+                  <span>Appli Recettes</span>
+                </div>
+              </div>
+              <div class="contribution-date">
+                <i class="fas fa-calendar"></i>
+                <span>12 Juil. 2023</span>
+              </div>
+            </div>
+            <p class="contribution-description">
+              Nouveau design pour les cartes de recettes avec animation au hover
+              et système de rating.
+            </p>
+            <div class="contribution-details">
+              <div class="detail-item">
+                <span class="detail-label">Statut:</span>
+                <span class="detail-value badge pending">En revue</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">XP potentielle:</span>
+                <span class="detail-value">
+                  <i class="fas fa-bolt"></i>
+                  120 XP
+                </span>
+              </div>
+            </div>
+            <div class="contribution-footer">
+              <a href="contribution-detail.html" class="btn-link">
+                Voir les détails
+                <i class="fas fa-arrow-right"></i>
+              </a>
+              <div class="contribution-actions">
+                <button class="btn-icon">
+                  <i class="fas fa-share"></i>
+                </button>
+                <button class="btn-icon">
+                  <i class="fas fa-ellipsis-v"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contribution 3 -->
+          <div class="contribution-card glass-panel" data-status="rejected">
+            <div class="contribution-header">
+              <div class="contribution-badge rejected">
+                <i class="fas fa-times"></i>
+              </div>
+              <div class="contribution-meta">
+                <h3>API Notifications</h3>
+                <div class="contribution-project">
+                  <i class="fas fa-project-diagram"></i>
+                  <span>TaskFlow</span>
+                </div>
+              </div>
+              <div class="contribution-date">
+                <i class="fas fa-calendar"></i>
+                <span>5 Juil. 2023</span>
+              </div>
+            </div>
+            <p class="contribution-description">
+              Première version de l'API pour le système de notifications en
+              temps réel.
+            </p>
+            <div class="contribution-details">
+              <div class="detail-item">
+                <span class="detail-label">Statut:</span>
+                <span class="detail-value badge rejected">Rejetée</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Feedback:</span>
+                <span class="detail-value"
+                  >Nécessite une refonte de l'architecture</span
+                >
+              </div>
+            </div>
+            <div class="contribution-footer">
+              <a href="contribution-detail.html" class="btn-link">
+                Voir les détails
+                <i class="fas fa-arrow-right"></i>
+              </a>
+              <div class="contribution-actions">
+                <button class="btn-icon">
+                  <i class="fas fa-share"></i>
+                </button>
+                <button class="btn-icon">
+                  <i class="fas fa-ellipsis-v"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Empty State -->
+        <div class="empty-state glass-panel">
+          <div class="empty-icon">
+            <i class="fas fa-code-merge"></i>
+          </div>
+          <h3>Aucune contribution trouvée</h3>
+          <p>
+            Vous n'avez pas encore de contributions correspondant à ces filtres.
+          </p>
+          <button class="btn-primary">
+            <i class="fas fa-plus"></i>
+            Nouvelle contribution
+          </button>
+        </div>
+
+        <!-- Pagination -->
+        <div class="pagination">
+          <button class="btn-icon disabled">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button class="page-number active">1</button>
+          <button class="page-number">2</button>
+          <button class="btn-icon">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+      </main>
+    </div>
+
+    <!-- New Contribution Modal -->
+    <div class="modal glass-modal" id="newContributionModal">
+      <div class="modal-content">
+        <button class="close-modal">
+          <i class="fas fa-times"></i>
+        </button>
+        <h2>Nouvelle Contribution</h2>
+        <form id="newContributionForm">
+          <div class="form-group">
+            <label for="contributionProject">Projet</label>
+            <select id="contributionProject" required>
+              <option value="">Sélectionner un projet</option>
+              <option value="1">TaskFlow</option>
+              <option value="2">Appli Recettes</option>
+              <option value="3">Data Analytics</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="contributionTitle">Titre</label>
+            <input
+              type="text"
+              id="contributionTitle"
+              placeholder="Titre de votre contribution"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="contributionDescription">Description</label>
+            <textarea
+              id="contributionDescription"
+              placeholder="Décrivez en détail votre contribution..."
+              rows="4"
+              required
+            ></textarea>
+          </div>
+          <div class="form-group">
+            <label for="contributionType">Type de contribution</label>
+            <select id="contributionType" required>
+              <option value="">Sélectionner un type</option>
+              <option value="code">Code</option>
+              <option value="design">Design</option>
+              <option value="documentation">Documentation</option>
+              <option value="bugfix">Correction de bug</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Fichiers joints</label>
+            <div class="file-upload">
+              <input type="file" id="contributionFiles" multiple />
+              <label for="contributionFiles" class="upload-area">
+                <i class="fas fa-cloud-upload-alt"></i>
+                <span
+                  >Glissez-déposez vos fichiers ou
+                  <em>cliquez pour parcourir</em></span
+                >
+              </label>
+              <div class="file-preview" id="filePreview"></div>
+            </div>
+          </div>
+          <div class="form-actions">
+            <button type="button" class="btn-outline close-modal">
+              Annuler
+            </button>
+            <button type="submit" class="btn-primary">
+              <i class="fas fa-paper-plane"></i>
+              Soumettre
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/theme.js"></script>
+    <script src="assets/js/contributions.js"></script>
+  </body>
+</html>

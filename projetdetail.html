@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nom du Projet | CollabDev</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../assets/css/index.css" />
+    <link rel="stylesheet" href="../assets/css/components.css" />
+    <link rel="stylesheet" href="../assets/css/projetdetail.css" />
+  </head>
+  <body>
+    <!-- Header (identique aux autres pages) -->
+    <header class="glass-header">
+      <!-- ... -->
+    </header>
+
+    <div class="dashboard-layout">
+      <!-- Sidebar (identique aux autres pages) -->
+      <aside class="glass-sidebar">
+        <!-- ... -->
+      </aside>
+
+      <!-- Main Content -->
+      <main class="dashboard-content">
+        <!-- En-tête du projet -->
+        <div class="project-header">
+          <div class="breadcrumb">
+            <a href="projects.html">Mes Projets</a>
+            <i class="fas fa-chevron-right"></i>
+            <span>Nom du Projet</span>
+          </div>
+
+          <div class="project-title-container">
+            <div class="project-badge large">
+              <i class="fas fa-project-diagram"></i>
+            </div>
+            <div>
+              <h1>Nom du Projet</h1>
+              <div class="project-meta">
+                <span class="project-status active">Actif</span>
+                <span class="project-members">
+                  <i class="fas fa-users"></i>
+                  5 membres
+                </span>
+                <span class="project-date">
+                  <i class="fas fa-calendar-alt"></i>
+                  Créé le 15/06/2023
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-actions">
+            <!-- Actions communes -->
+            <button class="btn-secondary">
+              <i class="fas fa-star"></i>
+              Suivre
+            </button>
+
+            <!-- Actions gestionnaire seulement -->
+            <div class="manager-actions" data-role="manager">
+              <button class="btn-primary" id="settingsModalToggle">
+                <i class="fas fa-cog"></i>
+                Paramètres
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contenu principal -->
+        <div class="project-layout">
+          <!-- Colonne de gauche -->
+          <div class="project-main">
+            <!-- Onglets -->
+            <div class="project-tabs">
+              <button class="tab-btn active" data-tab="overview">
+                <i class="fas fa-home"></i>
+                Vue d'ensemble
+              </button>
+              <button class="tab-btn" data-tab="features">
+                <i class="fas fa-list-check"></i>
+                Fonctionnalités
+              </button>
+              <button class="tab-btn" data-tab="contributions">
+                <i class="fas fa-code-merge"></i>
+                Contributions
+              </button>
+              <button class="tab-btn" data-tab="discussions">
+                <i class="fas fa-comments"></i>
+                Discussions
+              </button>
+              <div class="tab-indicator"></div>
+            </div>
+
+            <!-- Contenu des onglets -->
+            <div class="tab-content active" id="overview-tab">
+              <!-- Section Description -->
+              <section class="project-section">
+                <h2>
+                  <i class="fas fa-align-left"></i>
+                  Description
+                </h2>
+                <div class="project-description">
+                  <p>
+                    Description complète du projet avec les objectifs,
+                    technologies utilisées et contexte.
+                  </p>
+
+                  <!-- Éditeur pour gestionnaire -->
+                  <div class="editor-container" data-role="manager">
+                    <textarea class="description-editor">
+Description complète du projet...</textarea
+                    >
+                    <div class="editor-actions">
+                      <button class="btn-secondary">Annuler</button>
+                      <button class="btn-primary">Enregistrer</button>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <!-- Section Progression -->
+              <section class="project-section">
+                <div class="section-header">
+                  <h2>
+                    <i class="fas fa-chart-line"></i>
+                    Progression
+                  </h2>
+                  <span class="completion-rate">45% complété</span>
+                </div>
+                <div class="progress-bar large">
+                  <div class="progress-fill" style="width: 45%"></div>
+                </div>
+
+                <div class="progress-stats">
+                  <div class="stat-item">
+                    <div class="stat-value">12</div>
+                    <div class="stat-label">Fonctionnalités</div>
+                  </div>
+                  <div class="stat-item">
+                    <div class="stat-value">5</div>
+                    <div class="stat-label">Terminées</div>
+                  </div>
+                  <div class="stat-item">
+                    <div class="stat-value">24</div>
+                    <div class="stat-label">Contributions</div>
+                  </div>
+                </div>
+              </section>
+
+              <!-- Section Dernières Activités -->
+              <section class="project-section">
+                <h2>
+                  <i class="fas fa-clock-rotate-left"></i>
+                  Dernières Activités
+                </h2>
+                <div class="activity-feed compact">
+                  <!-- Activité 1 -->
+                  <div class="activity-item">
+                    <div class="activity-avatar">
+                      <img
+                        src="assets/images/avatars/user2.jpg"
+                        alt="Marie L."
+                      />
+                    </div>
+                    <div class="activity-content">
+                      <div class="activity-message">
+                        <strong>Marie L.</strong> a soumis une nouvelle
+                        contribution pour <strong>Fonctionnalité #3</strong>
+                      </div>
+                      <div class="activity-meta">
+                        <span class="activity-time">Il y a 2 heures</span>
+                        <span class="activity-badge">
+                          <i class="fas fa-code-merge"></i>
+                          Développement
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Plus d'activités... -->
+                </div>
+              </section>
+            </div>
+
+            <!-- Autres onglets (contenu masqué par défaut) -->
+            <div class="tab-content" id="features-tab">
+              <!-- Contenu des fonctionnalités -->
+            </div>
+
+            <div class="tab-content" id="contributions-tab">
+              <!-- Contenu des contributions -->
+            </div>
+
+            <div class="tab-content" id="discussions-tab">
+              <!-- Contenu des discussions -->
+            </div>
+          </div>
+
+          <!-- Colonne de droite -->
+          <div class="project-sidebar">
+            <!-- Section Récompenses -->
+            <div class="sidebar-card">
+              <h3>
+                <i class="fas fa-trophy"></i>
+                Récompenses
+              </h3>
+              <div class="rewards-info">
+                <div class="reward-item">
+                  <i class="fas fa-bolt"></i>
+                  <div>
+                    <div class="reward-value">120 XP</div>
+                    <div class="reward-label">par fonctionnalité</div>
+                  </div>
+                </div>
+                <div class="reward-item">
+                  <i class="fas fa-coins"></i>
+                  <div>
+                    <div class="reward-value">40 Points</div>
+                    <div class="reward-label">par contribution</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Section Membres -->
+            <div class="sidebar-card">
+              <div class="card-header">
+                <h3>
+                  <i class="fas fa-users"></i>
+                  Membres
+                </h3>
+                <!-- Bouton d'invitation pour gestionnaire -->
+                <button class="btn-icon" data-role="manager">
+                  <i class="fas fa-plus"></i>
+                </button>
+              </div>
+              <div class="members-list">
+                <!-- Membre 1 -->
+                <div class="member-item">
+                  <img src="assets/images/avatars/user1.jpg" alt="Alex D." />
+                  <div class="member-info">
+                    <div class="member-name">Alex D.</div>
+                    <div class="member-role">Gestionnaire</div>
+                  </div>
+                  <div class="member-xp">1,850 XP</div>
+                </div>
+                <!-- Plus de membres... -->
+              </div>
+            </div>
+
+            <!-- Section Technologies -->
+            <div class="sidebar-card">
+              <div class="card-header">
+                <h3>
+                  <i class="fas fa-code"></i>
+                  Technologies
+                </h3>
+                <!-- Bouton d'ajout pour gestionnaire -->
+                <button class="btn-icon" data-role="manager">
+                  <i class="fas fa-plus"></i>
+                </button>
+              </div>
+              <div class="tech-tags">
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">Node.js</span>
+                <!-- Plus de technologies... -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Modal Paramètres (pour gestionnaire) -->
+    <div class="modal" id="settingsModal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>Paramètres du Projet</h3>
+          <button class="modal-close">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id="projectSettingsForm">
+            <div class="form-group">
+              <label>Nom du projet</label>
+              <input type="text" value="Nom du Projet" />
+            </div>
+
+            <div class="form-group">
+              <label>Statut</label>
+              <select>
+                <option value="active">Actif</option>
+                <option value="paused">En pause</option>
+                <option value="completed">Terminé</option>
+                <option value="archived">Archivé</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label>Visibilité</label>
+              <div class="radio-group">
+                <label>
+                  <input type="radio" name="visibility" checked />
+                  <span>Public</span>
+                </label>
+                <label>
+                  <input type="radio" name="visibility" />
+                  <span>Privé</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Récompenses XP</label>
+              <input type="number" value="120" />
+            </div>
+
+            <div class="form-group">
+              <label>Récompenses Points</label>
+              <input type="number" value="40" />
+            </div>
+
+            <div class="form-actions">
+              <button type="button" class="btn-secondary">Annuler</button>
+              <button type="submit" class="btn-primary">Enregistrer</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="../assets/js/index.js"></script>
+    <script src="../assets/js/theme.js"></script>
+    <script src="../assets/js/projetdetail.js"></script>
+  </body>
+</html>
