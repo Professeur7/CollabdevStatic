@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gestion de Projet | CollabDev</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../assets/css/index.css" />
+    <link rel="stylesheet" href="../assets/css/components.css" />
+    <link rel="stylesheet" href="../assets/css/gestion-projet.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="glass-header">
+      <div class="container">
+        <nav class="navbar">
+          <a href="index.html" class="logo">
+            <i class="fas fa-code-branch"></i>
+            <span>CollabDev</span>
+          </a>
+
+          <div class="search-container">
+            <div class="search-bar">
+              <input
+                type="text"
+                placeholder="Rechercher..."
+                id="globalSearch"
+              />
+              <button class="search-btn">
+                <i class="fas fa-search"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="header-actions">
+            <button class="notification-btn">
+              <i class="fas fa-bell"></i>
+              <span class="notification-badge">2</span>
+            </button>
+            <button class="theme-toggle" id="themeToggle">
+              <i class="fas fa-moon"></i>
+            </button>
+            <div class="user-avatar" id="userMenuBtn">
+              <img src="assets/images/avatars/user1.jpg" alt="Profil" />
+              <div class="user-status online"></div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="dashboard-layout">
+      <!-- Sidebar -->
+      <aside class="glass-sidebar">
+        <div class="user-profile">
+          <div class="avatar-container">
+            <img
+              src="assets/images/avatars/user1.jpg"
+              alt="Profil"
+              class="profile-avatar"
+            />
+            <div class="level-badge">24</div>
+          </div>
+          <h3>Alex Dupont</h3>
+          <p>Développeur Fullstack</p>
+          <div class="xp-bar">
+            <div class="xp-progress" style="width: 65%"></div>
+            <span>2,450/3,800 XP</span>
+          </div>
+        </div>
+
+        <nav class="sidebar-nav">
+          <a href="dashboard.html">
+            <i class="fas fa-home"></i>
+            <span>Tableau de bord</span>
+          </a>
+          <a href="projects.html" class="active">
+            <i class="fas fa-project-diagram"></i>
+            <span>Mes projets</span>
+            <span class="nav-badge">8</span>
+          </a>
+          <a href="idees-projets.html">
+            <i class="fas fa-lightbulb"></i>
+            <span>Idées de projets</span>
+            <span class="nav-badge">5</span>
+          </a>
+          <a href="contributions.html">
+            <i class="fas fa-code-merge"></i>
+            <span>Contributions</span>
+            <span class="nav-badge">5</span>
+          </a>
+          <a href="messages.html">
+            <i class="fas fa-envelope"></i>
+            <span>Messages</span>
+            <span class="nav-badge">3</span>
+          </a>
+        </nav>
+
+        <div class="sidebar-footer">
+          <button class="btn-create" id="newProjectBtn">
+            <i class="fas fa-plus"></i>
+            Nouveau projet
+          </button>
+        </div>
+      </aside>
+
+      <!-- Project Management Content -->
+      <main class="dashboard-content">
+        <div class="project-management-container">
+          <!-- Project Header -->
+          <header class="project-header glass-panel">
+            <div class="header-main">
+              <div class="project-badge" style="background-color: #6366f1">
+                <i class="fas fa-project-diagram"></i>
+              </div>
+              <div>
+                <h1>Appli Recettes</h1>
+                <div class="project-meta">
+                  <span class="status-badge active">Actif</span>
+                  <span class="role-badge manager">Gestionnaire</span>
+                  <span
+                    ><i class="far fa-calendar"></i> Créé le 15/03/2023</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="header-actions">
+              <button class="btn-icon" id="projectSettings">
+                <i class="fas fa-cog"></i>
+              </button>
+              <div class="dropdown-menu">
+                <a href="#"><i class="fas fa-edit"></i> Modifier le projet</a>
+                <a href="#"
+                  ><i class="fas fa-users-cog"></i> Gérer les membres</a
+                >
+                <a href="#"><i class="fas fa-chart-line"></i> Statistiques</a>
+                <a href="#"><i class="fas fa-archive"></i> Archiver</a>
+              </div>
+            </div>
+          </header>
+
+          <!-- Project Sub Navigation -->
+          <nav class="project-subnav">
+            <ul>
+              <li class="active">
+                <a href="#tableau-bord"
+                  ><i class="fas fa-tachometer-alt"></i> Tableau de bord</a
+                >
+              </li>
+              <li>
+                <a href="#taches"><i class="fas fa-tasks"></i> Tâches</a>
+              </li>
+              <li>
+                <a href="#membres"><i class="fas fa-users"></i> Membres</a>
+              </li>
+              <li>
+                <a href="#fichiers"><i class="fas fa-folder"></i> Fichiers</a>
+              </li>
+              <li>
+                <a href="#discussions"
+                  ><i class="fas fa-comments"></i> Discussions</a
+                >
+              </li>
+              <li>
+                <a href="#parametres"><i class="fas fa-cog"></i> Paramètres</a>
+              </li>
+            </ul>
+          </nav>
+
+          <!-- Main Project Content -->
+          <div class="project-content">
+            <!-- Overview Section -->
+            <section class="overview-section glass-panel">
+              <h2><i class="fas fa-chart-pie"></i> Aperçu du projet</h2>
+
+              <div class="progress-container">
+                <div class="progress-header">
+                  <span>Progression globale</span>
+                  <span>45%</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-fill" style="width: 45%"></div>
+                </div>
+              </div>
+
+              <div class="stats-grid">
+                <div class="stat-card">
+                  <div
+                    class="stat-icon"
+                    style="background-color: #10b98120; color: #10b981"
+                  >
+                    <i class="fas fa-check-circle"></i>
+                  </div>
+                  <div>
+                    <span class="stat-value">24/58</span>
+                    <span class="stat-label">Tâches complétées</span>
+                  </div>
+                </div>
+                <div class="stat-card">
+                  <div
+                    class="stat-icon"
+                    style="background-color: #3b82f620; color: #3b82f6"
+                  >
+                    <i class="fas fa-users"></i>
+                  </div>
+                  <div>
+                    <span class="stat-value">6</span>
+                    <span class="stat-label">Membres</span>
+                  </div>
+                </div>
+                <div class="stat-card">
+                  <div
+                    class="stat-icon"
+                    style="background-color: #f59e0b20; color: #f59e0b"
+                  >
+                    <i class="fas fa-clock"></i>
+                  </div>
+                  <div>
+                    <span class="stat-value">18j</span>
+                    <span class="stat-label">Retard</span>
+                  </div>
+                </div>
+                <div class="stat-card">
+                  <div
+                    class="stat-icon"
+                    style="background-color: #8b5cf620; color: #8b5cf6"
+                  >
+                    <i class="fas fa-code-branch"></i>
+                  </div>
+                  <div>
+                    <span class="stat-value">12</span>
+                    <span class="stat-label">PR ouvertes</span>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Tasks Section -->
+            <section class="tasks-section glass-panel">
+              <div class="section-header">
+                <h2><i class="fas fa-tasks"></i> Tâches récentes</h2>
+                <button class="btn-primary" id="addTaskBtn">
+                  <i class="fas fa-plus"></i> Nouvelle tâche
+                </button>
+              </div>
+
+              <div class="tasks-list">
+                <div class="task-item">
+                  <div class="task-checkbox">
+                    <input type="checkbox" id="task1" />
+                    <label for="task1"></label>
+                  </div>
+                  <div class="task-content">
+                    <div class="task-header">
+                      <h3>Implémenter l'authentification</h3>
+                      <span class="task-priority high">Haute</span>
+                    </div>
+                    <p class="task-description">
+                      Créer le système d'authentification avec Firebase Auth
+                    </p>
+                    <div class="task-meta">
+                      <span class="task-assignee">
+                        <img
+                          src="../assets/images/avatars/user2.jpg"
+                          alt="Assigné à"
+                        />
+                        Marie L.
+                      </span>
+                      <span class="task-deadline">
+                        <i class="far fa-calendar-alt"></i>
+                        Échéance: 25/06/2023
+                      </span>
+                    </div>
+                  </div>
+                  <div class="task-actions">
+                    <button class="btn-icon">
+                      <i class="fas fa-ellipsis-v"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="task-item completed">
+                  <div class="task-checkbox">
+                    <input type="checkbox" id="task2" checked />
+                    <label for="task2"></label>
+                  </div>
+                  <div class="task-content">
+                    <div class="task-header">
+                      <h3>Design des écrans principaux</h3>
+                      <span class="task-priority medium">Moyenne</span>
+                    </div>
+                    <p class="task-description">
+                      Créer les maquettes Figma pour les écrans d'accueil et de
+                      recherche
+                    </p>
+                    <div class="task-meta">
+                      <span class="task-assignee">
+                        <img
+                          src="../assets/images/avatars/user3.jpg"
+                          alt="Assigné à"
+                        />
+                        Jean D.
+                      </span>
+                      <span class="task-deadline completed">
+                        <i class="far fa-calendar-alt"></i>
+                        Terminé le: 10/05/2023
+                      </span>
+                    </div>
+                  </div>
+                  <div class="task-actions">
+                    <button class="btn-icon">
+                      <i class="fas fa-ellipsis-v"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <a href="#taches" class="view-all-link">
+                Voir toutes les tâches <i class="fas fa-arrow-right"></i>
+              </a>
+            </section>
+
+            <!-- Members Section -->
+            <section class="members-section glass-panel">
+              <div class="section-header">
+                <h2><i class="fas fa-users"></i> Membres de l'équipe</h2>
+                <button class="btn-outline" id="addMemberBtn">
+                  <i class="fas fa-user-plus"></i> Ajouter
+                </button>
+              </div>
+
+              <div class="members-grid">
+                <div class="member-card">
+                  <div class="member-avatar">
+                    <img
+                      src="../assets/images/avatars/user1.jpg"
+                      alt="Membre"
+                    />
+                    <div class="member-status online"></div>
+                  </div>
+                  <h3>Alex Dupont</h3>
+                  <p class="member-role">Gestionnaire</p>
+                  <div class="member-stats">
+                    <span><i class="fas fa-tasks"></i> 12 tâches</span>
+                    <span><i class="fas fa-check"></i> 78%</span>
+                  </div>
+                </div>
+
+                <div class="member-card">
+                  <div class="member-avatar">
+                    <img
+                      src="../assets/images/avatars/user2.jpg"
+                      alt="Membre"
+                    />
+                    <div class="member-status online"></div>
+                  </div>
+                  <h3>Marie Lambert</h3>
+                  <p class="member-role">Développeuse Frontend</p>
+                  <div class="member-stats">
+                    <span><i class="fas fa-tasks"></i> 8 tâches</span>
+                    <span><i class="fas fa-check"></i> 62%</span>
+                  </div>
+                </div>
+
+                <div class="member-card">
+                  <div class="member-avatar">
+                    <img
+                      src="../assets/images/avatars/user3.jpg"
+                      alt="Membre"
+                    />
+                    <div class="member-status away"></div>
+                  </div>
+                  <h3>Jean Dubois</h3>
+                  <p class="member-role">Designer UI/UX</p>
+                  <div class="member-stats">
+                    <span><i class="fas fa-tasks"></i> 5 tâches</span>
+                    <span><i class="fas fa-check"></i> 100%</span>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+
+          <!-- Project Sidebar -->
+          <aside class="project-sidebar">
+            <!-- Timeline Widget -->
+            <div class="sidebar-widget glass-panel">
+              <h3><i class="fas fa-calendar-alt"></i> Échéances</h3>
+              <div class="timeline">
+                <div class="timeline-item urgent">
+                  <div class="timeline-date">15 Juin</div>
+                  <div class="timeline-content">
+                    <h4>Version Alpha</h4>
+                    <p>Première version testable</p>
+                    <span class="timeline-badge">Urgent</span>
+                  </div>
+                </div>
+                <div class="timeline-item">
+                  <div class="timeline-date">30 Juillet</div>
+                  <div class="timeline-content">
+                    <h4>Version Bêta</h4>
+                    <p>Test utilisateurs</p>
+                  </div>
+                </div>
+                <div class="timeline-item">
+                  <div class="timeline-date">15 Sept</div>
+                  <div class="timeline-content">
+                    <h4>Version Finale</h4>
+                    <p>Livraison du projet</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Recent Activity Widget -->
+            <div class="sidebar-widget glass-panel">
+              <h3><i class="fas fa-rss"></i> Activité récente</h3>
+              <div class="activity-list">
+                <div class="activity-item">
+                  <div class="activity-avatar">
+                    <img
+                      src="../assets/images/avatars/user2.jpg"
+                      alt="Utilisateur"
+                    />
+                  </div>
+                  <div class="activity-content">
+                    <p>
+                      <strong>Marie L.</strong> a complété la tâche
+                      <strong>"Design écran login"</strong>
+                    </p>
+                    <span class="activity-time">Il y a 2 heures</span>
+                  </div>
+                </div>
+                <div class="activity-item">
+                  <div class="activity-avatar">
+                    <img
+                      src="../assets/images/avatars/user3.jpg"
+                      alt="Utilisateur"
+                    />
+                  </div>
+                  <div class="activity-content">
+                    <p>
+                      <strong>Jean D.</strong> a commenté la PR
+                      <strong>#24</strong>
+                    </p>
+                    <span class="activity-time">Il y a 5 heures</span>
+                  </div>
+                </div>
+                <div class="activity-item">
+                  <div class="activity-avatar">
+                    <img
+                      src="../assets/images/avatars/user1.jpg"
+                      alt="Utilisateur"
+                    />
+                  </div>
+                  <div class="activity-content">
+                    <p><strong>Vous</strong> avez créé une nouvelle tâche</p>
+                    <span class="activity-time">Il y a 1 jour</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Quick Links Widget -->
+            <div class="sidebar-widget glass-panel">
+              <h3><i class="fas fa-link"></i> Liens rapides</h3>
+              <div class="quick-links">
+                <a href="#" class="quick-link">
+                  <i class="fab fa-github"></i>
+                  <span>Dépôt GitHub</span>
+                </a>
+                <a href="#" class="quick-link">
+                  <i class="fab fa-figma"></i>
+                  <span>Maquettes Figma</span>
+                </a>
+                <a href="#" class="quick-link">
+                  <i class="fas fa-file-contract"></i>
+                  <span>Cahier des charges</span>
+                </a>
+                <a href="#" class="quick-link">
+                  <i class="fas fa-chart-line"></i>
+                  <span>Tableau de bord</span>
+                </a>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </main>
+    </div>
+
+    <!-- New Task Modal -->
+    <div class="modal glass-modal" id="taskModal">
+      <div class="modal-content">
+        <button class="close-modal">
+          <i class="fas fa-times"></i>
+        </button>
+        <h2>Nouvelle Tâche</h2>
+        <form id="taskForm">
+          <div class="form-group">
+            <label for="taskTitle">Titre *</label>
+            <input
+              type="text"
+              id="taskTitle"
+              required
+              placeholder="Nom de la tâche"
+            />
+          </div>
+          <div class="form-group">
+            <label for="taskDescription">Description</label>
+            <textarea
+              id="taskDescription"
+              rows="3"
+              placeholder="Détails de la tâche"
+            ></textarea>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="taskAssignee">Assigné à</label>
+              <select id="taskAssignee">
+                <option value="">Non assigné</option>
+                <option value="user1">Alex Dupont</option>
+                <option value="user2">Marie Lambert</option>
+                <option value="user3">Jean Dubois</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="taskPriority">Priorité</label>
+              <select id="taskPriority">
+                <option value="low">Basse</option>
+                <option value="medium" selected>Moyenne</option>
+                <option value="high">Haute</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="taskStartDate">Date de début</label>
+              <input type="date" id="taskStartDate" />
+            </div>
+            <div class="form-group">
+              <label for="taskEndDate">Date limite</label>
+              <input type="date" id="taskEndDate" />
+            </div>
+          </div>
+          <div class="form-actions">
+            <button type="button" class="btn-outline close-modal">
+              Annuler
+            </button>
+            <button type="submit" class="btn-primary">Créer la tâche</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/projet-gestion.js"></script>
+  </body>
+</html>
